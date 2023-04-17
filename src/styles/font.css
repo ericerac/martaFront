@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
+
+:root{
+    --color_button: rgba(173, 173, 173, 0.5);
+    --fontSizeTitleH1: calc(25px + 3vh);
+    --fontSizeTitleH2: calc(25px + 1vh);
+    --bgTitle: rgba(165, 42, 42, 1);
+    --txtB:  #3e0101;
+    --bgColor:"white"
+  }
+  /* .text{
+    color:v-bind(texteColor);
+  }
+  .fond{
+    background:v-bind(bgColor);
+  } */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+}
+
+.container, p {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 16px;
+    
+   
+}
+/* .li_fiche, .title_texte{
+  color: rgb(62, 1, 1);
+}  */
