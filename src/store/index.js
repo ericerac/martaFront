@@ -338,7 +338,7 @@ const store = createStore({
             `https://api.bigdatacloud.net/data/ip-geolocation?ip=212.106.239.92&localityLanguage=en&key=bdc_fb0cd78789724292ba4ec846a10c55ed`
           )
           .then((res) => {
-            console.log("RESPONSE GEOLOC DATA----->", res.data.location.timeZone.localTime.split("-")[1]);
+            console.log("RESPONSE GEOLOC DATA----->", res.data.location.timeZone.localTime.split("T")[0]);
 
             let userData = {
               locality: res.data.location.localityName,
