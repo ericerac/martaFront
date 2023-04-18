@@ -61,7 +61,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   function (response) {
     const supp = response.data.message;
-    // console.log("RESPONSE", response);
+    console.log("RESPONSE", response);
     // console.log("RESPONSE STATUS", response.status);
 
     // console.log("RESPONSE INTER", supp);
@@ -112,7 +112,7 @@ instance.interceptors.response.use(
     // store.commit("ModalError", true);
 
     if (error.response.status == 401 || error.error == 401) {
-      store.commit("ModalMessage", "Requete non autorisée");
+      store.commit("ModalMessage", "Accés non autorisé");
       store.commit("ModalError", true);
       // console.log("MODAL MESSAGE", error.response.data.error);
     } else if (error.response.status == 429) {
@@ -546,6 +546,7 @@ const store = createStore({
 
     loginPost: ({ commit }, userData) => {
       // console.log("LOGIN POST STORE");
+      commit("loading", true);
       return new Promise((resolve, reject) => {
         instance
           .post("/inici/coconexion", userData)
@@ -555,9 +556,11 @@ const store = createStore({
             commit("logUser", response.data);
             commit("logToken", response.data.token);
             // commit("Logon", response.data.userLogon);
+            commit("loading", false);
             resolve(response);
           })
           .catch((err) => {
+            commit("loading", false);
             reject(err);
           });
       });
@@ -657,16 +660,6 @@ const store = createStore({
       });
     },
 
-
-
-    // getIpClient: async () => {
-    //   try {
-    //     const response = await axios.get("https://api.ipify.org?format=json");
-    //     console.log("ADRESSE IP", response);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // },
 
   }, // fin actions
 }); // fin Store

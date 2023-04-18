@@ -1,6 +1,6 @@
 <template>
-  <div class="page">
-    <div v-if="modalError">
+  <div class="page" >
+    <div v-if="modalError" class="modalEr">
       <ModalError />
     </div>
     <div class="wrapper ">
@@ -52,9 +52,9 @@
               placeholder=" Votre mot de passe"
               required
               />
-              <p @click="enterEmail()">
+              <!-- <p @click="enterEmail()">
                   Mot de passe oublié ?
-                </p>
+                </p> -->
             <p class="ErrorInput" v-if="messagePassword">
               {{ messagePassword }}
             </p>
@@ -281,7 +281,14 @@ this.$router.push("9876545678hgh87yhju87")
        height: 100%;
         
 } */
-
+.modalEr{
+  position:absolute;
+  top:50%;left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1000;
+  width:100vw
+  
+}
 .wrapper {
     position: relative;
     z-index: 2;
