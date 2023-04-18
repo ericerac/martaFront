@@ -97,12 +97,9 @@ export default {
     data: function () {
         return {
             mode: "login",
-           
-           
+
             Email: "",
             password: "",
-
-            
 
             message:"",
            
@@ -114,14 +111,9 @@ export default {
     },
     components: {
      ModalError,
-   
-    
-    
 },
-watch: {
-    
-},
-    
+
+
     computed: {
         ...mapState({
             modal:"modal",
@@ -130,9 +122,7 @@ watch: {
       auth:"auth"
 
         }),
-        
-
-
+       
     },
     
     methods: {
