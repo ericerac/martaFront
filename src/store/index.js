@@ -465,6 +465,7 @@ const store = createStore({
             // console.log("RESPONSE NAV DATA STORE", res.data);
           })
           .catch((err) => {
+            commit("loading", false);
             reject(err);
           });
       });
@@ -472,17 +473,20 @@ const store = createStore({
     //----------------* GET IMG DATA *---------------//
 
     getImgData: ({ commit }, n) => {
+      commit("loading", true);
       return new Promise((resolve, reject) => {
         // console.log("GET IMG DATA", n);
         instance
           .get(`inici/img?name=${n}`)
           .then((res) => {
             commit("ImgData", res.data);
+            commit("loading", false);
             resolve(res);
 
             // console.log("RESPONSE IMG DATA STORE", res.data);
           })
           .catch((err) => {
+            commit("loading", false);
             reject(err);
           });
       });
@@ -569,6 +573,7 @@ const store = createStore({
     //------------- UPDATE------------------_//
 
     updatePage: ({ commit }, data) => {
+      commit("loading", true);
       const page = data.page;
       // console.log("INDEX UPDATE PAGE DATA", data);
       let lang = "";
@@ -583,9 +588,11 @@ const store = createStore({
         instance
           .put(`/inici/update?name=${page}`, data.data, {})
           .then((res) => {
+            commit("loading", false);
             resolve(res);
           })
           .catch((err) => {
+            commit("loading", false);
             reject(err);
           });
       });
@@ -594,14 +601,17 @@ const store = createStore({
     //------------- CREATE DATE-------------------_//
 
     createDate: ({ commit }, data) => {
+      commit("loading", true);
       return new Promise((resolve, reject) => {
         instance
           .post("/inici/cal/create?page=cal", data, {})
           .then((response) => {
             commit("ArtData", response.data);
+            commit("loading", false);
             resolve(response);
           })
           .catch((err) => {
+            commit("loading", false);
             reject(err);
           });
       });
