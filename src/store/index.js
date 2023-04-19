@@ -117,13 +117,16 @@ instance.interceptors.response.use(
       // console.log("MODAL MESSAGE", error.response.data.error);
     } else if (error.response.status == 429) {
       //trop de requetes trop vite
+      store.commit("ModalError", true);
       store.commit(
         "ModalMessage",
         "Nombre de requetes excessives, réessayer dans un instant "
       );
     } else if (error.response.status == 404) {
+      store.commit("ModalError", true);
       store.commit("ModalMessage", "page not found");
     } else if (error.response.data.error) {
+      store.commit("ModalError", true);
       store.commit("ModalMessage", error.response.data.error.text);
     } 
 
@@ -193,7 +196,7 @@ const store = createStore({
       // eslint-disable-next-line no-undef
     },
     loading: (state, val) => {
-      // console.log("MUT USER loading", val);
+       console.log("MUT USER loading", val);
       state.loading = val;
       // eslint-disable-next-line no-undef
     },
@@ -239,7 +242,7 @@ const store = createStore({
       state.modalError = val;
     },
     ModalMessage: (state, val) => {
-      // console.log("ModalMessage", val);
+     
       state.modalMessage = val;
     },
     ModalSucces: (state, val) => {
@@ -403,7 +406,7 @@ const store = createStore({
       // console.log(" PAGE GET PAGE DATA", n);
 
       let lang = "";
-      commit("loading", true);
+      // commit("loading", true);
       if (n == "post") {
         lang = "cat";
       } else if (n == "calendar") {
@@ -419,7 +422,7 @@ const store = createStore({
         instance
           .get(`inici?name=${n}&lang=${lang}`)
           .then((res) => {
-            commit("loading", false);
+            // commit("loading", false);
             commit("PageData", res.data);
             if(n == "blog"){
               commit("BlogData", res.data);
@@ -437,7 +440,6 @@ const store = createStore({
           });
       });
     },
-
 
     //----------------* GET NAV DATA *---------------//
     getNavData: ({ commit }, l) => {

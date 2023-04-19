@@ -1,4 +1,5 @@
 <template >
+  <div>
   <loader v-if="loading" />
 
 
@@ -10,6 +11,7 @@
   <div class="container-fluid-footer">
     <foot :dark="dark" />
   </div>
+</div>
 </template>
 
 <script>

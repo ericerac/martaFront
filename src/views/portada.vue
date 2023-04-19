@@ -111,7 +111,7 @@
 
  <!-- ************* SCRIPT ************* -->
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapState, mapMutations } from "vuex";
 import {ref, toRef, reactive, computed} from "vue"
 // import navbar from "../components/nav_bar.vue"
 // import foot from "../components/footer.vue"
@@ -186,21 +186,18 @@ useHead({
       geoLoc: "geoloc",
       status: "status",
       userLocalHour: "userLocalHour",
-     loading:"loading",
+    //  loading:"loading",
      darkTheme:"darkTheme"
       
     }),
+    ...mapMutations(["loading"])
   },
 
   watch: {
     darkTheme(n, o) {
       console.log("WATCH THEME ", n);
     }
-    // namePage(n, o) {
-    //   if (n != o) {
-    //     this.getImgData(n);
-    //   }
-    // }
+
   },
 
   components: {
@@ -213,16 +210,6 @@ useHead({
 
   methods: {
 
-    // handleScroll() {
-    //         console.log('scroll');
-    //         const { scrollTop, scrollHeight, clientHeight } =
-    //             document.documentElement;
-    //         const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
-    //         this.scrollPosition = Math.round(scrolled);
-    //     },
-
-    
-
     getLocation() {
       this.$store.dispatch("getLoc")
         .then((res) => {
@@ -232,54 +219,25 @@ useHead({
 
     async DataCookies() {
       let dataTheme = await dataCookies();
-      // console.log("DATATHEME CALENDAR", dataTheme);
-      // this.darkTheme = dataTheme.theme
-      // this.dark = dataTheme.dark
+     
     },
 
     getPageData() {
-
+      this.$store.commit("loading",true)
       console.log("NAME  GET PAGE DATA");
       const n = "portada";
       this.$store.dispatch("getPageData", n)
         .then((res) => {
           if (res) {
             this.$store.dispatch("getImgData", n)
+            .then((res)=>{
+this.$store.commit("loading",false)
+            })
           }
         })
     },
 
-    // getImgData(np) {
-    //    console.log("NAME PAGE GET IMG DATA", np);
-    //   this.$store.dispatch("getImgData", np)
-    // },
-
-    // getNavData() {
-    //   const n = "navbar";
-    //   this.$store.dispatch("getNavData", n)
-    //     .then((res) => {
-    //       if (res) {
-
-    //         this.navbarOk = true
-
-
-    //       }
-    //     });
-    //   // console.log("REQUET GET NAV BAR PAGE DATA-----> ", n);
-    // },
-
-    // ******** INFORMATION FUNCTION.......
-
-    // viewWidth() {
-    //   // console.log("NAVIGATOR----->", window);
-    //   if (window.navigator) {
-    //     console.log("NAVIGATOR----->", window);
-    //     console.log("NAVIGATOR LANGUAGE----->", window.clientInformation.language);
-       
-    //   } else {
-    //     // console.log("SANS NAVIGATOR");
-    //   }
-    // },
+    
     viewWidth() {
       if (window.navigator) {
         console.log("NAVIGATOR----->", window);
@@ -300,13 +258,6 @@ useHead({
         console.log("SANS NAVIGATOR");
       }
     },
-
-    // getLoc() {
-    //   this.$store.dispatch("getLoc")
-    // },
-    // getIpClient() {
-    //   this.$store.dispatch("getIpClient")
-    // },
 
 
   }, // fin METHODS
