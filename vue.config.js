@@ -22,6 +22,23 @@ module.exports = {
   },
 },
 module.exports = {
+  devServer: {
+    proxy: {
+      '^/': {
+        target: 'http://49.13.3.226:3000',
+        changeOrigin: true
+      },
+    }
+  }
+},
+
+module.exports = {
+  devServer: {
+    port: 80,
+    host: '0.0.0.0'
+  }
+}
+module.exports = {
   chainWebpack: config => {
     
     // GraphQL Loader
