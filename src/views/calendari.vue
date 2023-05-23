@@ -1,6 +1,5 @@
 <template>
-    <!-- <div class="fond" :class="{ bgDark: darkTheme }"> -->
-    <div class="fond" :class=" { bgDark: darkTheme }">
+    <div class="fond" :class="{ bgDark: darkTheme }">
 
         <div class="containe text-center">
 
@@ -37,7 +36,6 @@
                             <a class="date_cal mt-2 mb-2 col-12 g-0" :href=d.link_event target="_blank"
                                 :style="getClassStyle(d.day)">
 
-                                <!-- :class="dateTimestamp(d.day) < dateNow ? 'datePass' : ''"> -->
                                 <div class="date_date col-3 col-lg-2 item  text" :class="darkTheme ? 'txtDark' : 'txtDay'">
                                     {{ dayWeek(d.day) }} {{ date(d.day) }} <br>
                                     {{
@@ -52,10 +50,7 @@
                                 <div class="info_top item  text"></div>
                             </a>
 
-                            <!-- <button v-if="admin" type="action" @click="updateCal(d._id)" class="btn_edit text">
-                                edit</button>
-                            <button v-if="admin && calComp && cardCalSelect[0]._id == d._id" type="action"
-                                @click="calComp = false" class="btn_edit text"> close</button> -->
+
                         </div>
 
                     </div>
@@ -109,7 +104,7 @@ export default {
     beforeMount: function () {
     },
     beforeUpdate: function () {
-        
+
     },
     created: function () {
         this.dateToday();
@@ -125,10 +120,7 @@ export default {
 
     computed: {
         ...mapState(
-            // [
-            //     "dataPageModul", "darkTheme","pageData"
-            // ]
-            // ,
+
             {
                 pageData: "pageData",
                 cardCalSelect: "cardCalSelect",
@@ -149,20 +141,9 @@ export default {
                 return this.pageData.sort((a, b) => (a.day > b.day ? 1 : -1)).reverse();
 
             }
-            // if (this.dataPageModul) {
-            //     this.dateData = true;
-            //     let PageDat = this.dataPageModul.pageData;
-            //     let date = "";
-            //     for (let d of PageDat) {
-            //         date = new Date(d.day);
-            //         let day = date.getDay()
-            //     }
 
-            //     return this.dataPageModul.pageData.sort((a, b) => (a.day > b.day ? 1 : -1)).reverse();
-
-            // }
         },
-        theme(){
+        theme() {
             // if(darkTheme == false || darkTheme.dark == false){
             //     this.dark == false
             // }
@@ -185,9 +166,7 @@ export default {
         },
 
     },
-    modules: {
 
-    },
     methods: {
 
         ...mapActions('dataPageModul', ['getPageData']),
@@ -198,27 +177,22 @@ export default {
 
         infoShow() { // selection date content info badge
             if (this.pageData) {
-                // console.log("dataDate", this.dataPageModul.pageData);
-                // console.log("NEXT DAY",this.pageData);
                 let nextS = this.pageData.map(function (day, index) {
                     return (day.day)
                 })
                 let hoy = new Date()
                 let bolos = moment(hoy).format("YYYY-MM-DD");
-                // console.log("BOLOS", bolos);
                 let next = this.pageData.filter(d => d.day > bolos)
-                //  console.log("POST BOLOS", next);
                 let bolo = next.reverse()[0].day
                 this.monthShow = moment(bolo).format('MMM', 'ca')
                 this.dayShow = this.dayWeek(bolo)
                 this.dateShow = moment(bolo).format('DD', 'ca')
                 this.whereShow = next[0].detail;
             } else {
-                // console.log("NOT DATA FROM PAGE");
             }
 
         },
-        
+
         getClassStyle(d) {
             if (this.dateTimestamp(d) < this.dateNow) {
                 console.log("GET CLASS DARK ");
@@ -260,9 +234,7 @@ export default {
             //******* UTIL *********
 
             let ahora = Date.now();
-            // console.log("HEURE DU CHARGEMENT DATE NOW +18---->", ahora);
             let date = new Date(ahora)
-            //    console.log("NEW DATE NOW", date);
             const timestamp = date.getTime();
             this.dateNow = timestamp
         },
@@ -271,8 +243,6 @@ export default {
 
             const ddate = new Date(val);
             const timestamp = ddate.getTime();
-            // console.log("TIMESTAMP CALENDAR DATE", val);
-            // console.log("TIMESTAMP CALENDAR DATE", timestamp);
             return timestamp;
         },
 
@@ -280,12 +250,9 @@ export default {
 
         getPageData() {
             const n = "calendar";
-
-            // this.$store.dispatch("dataPageModul/getPageData", n)
             this.$store.dispatch("getPageData", n)
                 .then((res) => {
                     if (res) {
-                        // console.log("retour dispatch calendar");
                         this.infoShow()
                     }
                 })
@@ -319,7 +286,7 @@ export default {
                     break
 
             }
-            // console.log("JOUR ", jour, dd, value);
+
             return jour
         },
 
@@ -330,9 +297,7 @@ export default {
         dateMonth(value) {
 
             return moment(value).format('MMM', 'ca')
-            // return moment(value).format("MM");
-            // // console.log("MONTH DATEMONTH", month);
-            // return month;
+
         },
 
         date(value) {
@@ -340,10 +305,10 @@ export default {
         },
 
         updateCal(x) {
-            // console.log("ID SELECT CARD", x);
+
             let ad = this.pageData;
             let dat = ad.filter(d => d._id == x);
-            // console.log("card SELECT ----->", dat);
+
             this.$store.commit("CardCalSelect", dat);
             this.calComp = true;
 
@@ -362,7 +327,7 @@ export default {
 
 a {
     list-style: none;
-    /* color: black; */
+
     text-decoration: none;
 }
 
@@ -458,12 +423,14 @@ a {
 
     margin-top: 0px
 }
-.img_top{
-    margin:auto
+
+.img_top {
+    margin: auto
 }
+
 .img_top img {
 
-    width:350px;
+    width: 350px;
     width: calc(300px + 8vw);
     height: auto;
     object-fit: cover;
@@ -507,10 +474,7 @@ a {
     padding: 10px 0;
 }
 
-.item {
-   
-
-}
+.item {}
 
 .date_cal {
     display: flex;
@@ -558,7 +522,7 @@ a {
     .img_top img {
         /* width: 100%;
         max-width: 600px; */
-       
+
         height: auto;
         object-fit: cover;
         overflow: hidden;
@@ -583,6 +547,7 @@ a {
     .legende {
         top: 80px;
     }
+
     .img_top>img {
 
         width: 600px

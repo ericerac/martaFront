@@ -26,6 +26,7 @@ module.exports = {
     proxy: {
       '^/': {
         target: 'http://49.13.3.226:3000',
+        // target: 'http://localhost:3000',
         changeOrigin: true
       },
     }

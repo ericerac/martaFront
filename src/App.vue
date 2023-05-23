@@ -2,11 +2,13 @@
   <div>
   <loader v-if="loading" />
 
-
-  <div class="bloc_nav" v-if="navbarOk && namePage != 'post' && namePage != 'adminPage' ">
+  
+  <div class="bloc_nav" v-if="navbarOk && namePage == 'post' && href == '/ad1920384756ytrdehdk' ">
+    
+  </div>
+  <div class="bloc_nav" v-else>
     <navbar :namePage="namePage" :dark="dark" @theme="dark = ($event)" />
   </div>
-
   <routerView />
   <div class="container-fluid-footer">
     <foot :dark="dark" />
@@ -42,34 +44,11 @@ export default {
 
   },
 
-//   setup()
-//   {
-// const siteData = reactive({
-//   title:"WwbSite test meta",
-//   description:" description test page mais ne fonctionne pas avec les data",
-// })
-
-// useHead({
-//   title:"web test meta title",
-//   meta:[{
-//     name:'description',
-//     //  content:" web test description"
-//     content:computed(()=> siteData.description)
-//   }]
-// })
-//   },
-
-  // beforeCreate(){
-  // // adding title for current view/page using vue-i18n
-  // let title = document.createElement(`title`)
-  // title.innerText = (`something`)
-
-  // document.querySelector(`head`).appendChild(title)
-  // },
 
   created: function () {
     this.getNavData();
-    this.getLocation()
+    this.getLocation();
+   
   },
   computed: {
     ...mapState({
@@ -114,7 +93,7 @@ export default {
         }
       });
     },
-
+   
     getLocation() {
       this.$store.dispatch("getLoc")
         .then((res) => {
@@ -124,7 +103,7 @@ export default {
 
     async DataCookies() {
       let dataTheme = await dataCookies();
-      this.dark = dataTheme.dark
+       this.dark = dataTheme.dark
       this.$store.commit("Theme", dataTheme.dark);
 
     },
@@ -143,9 +122,6 @@ export default {
   height: 100%;
 }
 
-html {
-  /* background-color: rgb(252, 217, 164); */
-}
 
 html {}
 
@@ -160,13 +136,10 @@ html {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* background-color: transparent; */
   margin-top: 0px;
   background-attachment: fixed;
   margin: auto;
   background-color: v-bind(backGround);
-  /* background-color:rgb(22, 23, 29); */
-  /* background: black; */
 }
 
 .container-fluid-footer {
@@ -174,13 +147,7 @@ html {}
   margin: 0 auto
 }
 
-/* .nav{
-  position:fixed;
-  top:20px;
-  right:30px;
-  left:30px;
-  z-index:1222;
-} */
+
 li {
   list-style: none;
 }

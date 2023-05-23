@@ -26,7 +26,9 @@ import axios from "axios";
 // // --------------------------------------------------------------//
 
 const instance = axios.create({
-  baseURL: "http://49.13.3.226:3000/",
+    baseURL: "http://49.13.3.226/",
+   
+  // baseURL: "http://localhost:3000/",
 });
 
 // // --------------------------------------------------------//
@@ -45,7 +47,7 @@ instance.interceptors.request.use(
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
-    }
+    } else{}
 
     return config;
   },
@@ -135,7 +137,6 @@ instance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
 
 // // --------------------------------------------------------------//
 
@@ -406,7 +407,7 @@ const store = createStore({
       // console.log(" PAGE GET PAGE DATA", n);
 
       let lang = "";
-      // commit("loading", true);
+       commit("loading", true);
       if (n == "post") {
         lang = "cat";
       } else if (n == "calendar") {
@@ -422,7 +423,7 @@ const store = createStore({
         instance
           .get(`inici?name=${n}&lang=${lang}`)
           .then((res) => {
-            // commit("loading", false);
+             commit("loading", false);
             commit("PageData", res.data);
             if(n == "blog"){
               commit("BlogData", res.data);

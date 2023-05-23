@@ -34,10 +34,7 @@
                     </li>
                     
                 </ul>
-                <!-- <p style="color:white">{{namePage}}</p> -->
-          
-
-              <!-- </div> -->
+                
             </navbar>
 
             <button type="button"  @click="isActive = !isActive" class="btn_nav" :class="{ active: isActive }" >
@@ -91,22 +88,20 @@ export default {
     namePage: {
       type:String,
       required: true,
-    validator: function (value) {
-      return [
-        'syncing',
-        'synced',
-        'version-conflict',
-        'error'
-      ].indexOf(value) !== -1
-    }
+    // validator: function (value) {
+    //   return [
+    //     'syncing',
+    //     'synced',
+    //     'version-conflict',
+    //     'error'
+    //   ].indexOf(value) !== -1
+    // }
     },
     dark: {
       type:Boolean,
       required: true,}
   },
-  modules: {
-    // navDisplay: "navDisplay",
-  },
+  
   methods: {
 
     viewWidth() {

@@ -3,22 +3,19 @@
         <div class="compo" v-if="compo == true">
             <blog_post @changeCompo="CompoDisplay" />
         </div>
-
         <div class="container" >
             <div class="header">
                 <!-- <div class="btn_head">
                     <button @click="compo = !compo" class="open_post btn_header" v-if="admin">New Post</button>
                     <button @click="goToP()" class="btn_retour btn_header">Retour</button>
                 </div> -->
+
+                <img  class="imgHeader" src="../assets/images/furgoAutopista.jpg" alt="imagen de fondo sombra de furgoneta en la carretera">
                 <div class="text_intro">
                     <p>{{blogData[0].p_1}}<br>
                         "Marta Renyer"
                     </p>
-                    <!-- <p>Mon blog est le lieu où j'écrit mes pensées de tout les jours, un lieu où il ne faut pas se poser de
-                        question.
-                        bonne lecture... <br>
-                        "Marta Renyer"
-                    </p> -->
+                    
                   <button @click="goToP" >Home</button>
                 </div>
 
@@ -123,7 +120,7 @@ export default {
     },
     created: function () {
 
-        // this.getNavData();
+      
         this.getCookies();
         this.getPageData();
     },
@@ -357,6 +354,13 @@ export default {
     display: none
 }
 
+.imgHeader{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:auto;
+}
 @media (min-width: 768px) {
     .btn_header {
         font-size: 1.5rem;
@@ -594,22 +598,10 @@ p {
 .fond {
     position: relative;
     color: white;
-    /* background: #1c1c1c; */
-    /* background-image: url("../assets/design/circle-scatter-haikei\ \(1\).svg"); */
-    /* background: rgb(56, 56, 56); */
-    /* background: rgb(252, 252, 252); */
-    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-    background: linear-gradient(90deg, rgba(131, 58, 180, .5) 0%, rgba(253, 29, 29, .5) 50%, rgba(252, 176, 69, .5) 100%);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(237, 57, 237, 1) 35%, rgba(151, 0, 255, 1) 100%);
-    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 0.06) 50%, rgba(128, 69, 252, 1) 100%);
-    background: linear-gradient(90deg, rgba(169, 58, 180, 0.27914915966386555) 0%, rgba(253, 29, 246, 1) 50%, rgba(196, 69, 252, 0.2847514005602241) 100%);
-    background: linear-gradient(90deg, rgba(169, 58, 180, 0.27914915966386555) 0%, rgba(253, 29, 29, 0.8449754901960784) 50%, rgba(196, 69, 252, 0.2847514005602241) 100%);
-   
-    background: linear-gradient(90deg, rgba(5, 5, 5, 1) 0%, rgba(253, 29, 29, 0.8449754901960784) 50%, rgba(5, 5, 5, 1) 100%);
-    */
     width: 100vw;
     height: auto;
     min-height: 110vh;
+  
 }
 
 .container {
@@ -637,8 +629,6 @@ p {
     width: 100%;
     height: auto;
     padding-top: 70px;
-    /* border: 1px solid rgb(255, 55, 55); */
-    /* background-image: url("../assets/design/Note.svg"); */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -646,7 +636,6 @@ p {
 article {
     width: 100%;
     position: relative;
-    /* border: 2px solid blue; */
     margin: 30px 0;
     padding: 0
 }
@@ -662,21 +651,14 @@ article {
     flex-direction: column;
     align-items: center;
     background-color: #FFFFFF;
-    /* border-radius: 40px; */
     border-style: none;
-    /* box-shadow: #ADCFFF 0 -12px 16px inset; */
     width: 100%;
     color: #000000;
-
-    /* font-family: -apple-system,sans-serif; */
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: -.24px;
     margin: 20px auto;
-
     padding: 10px;
-
-
     user-select: none;
 
 }
@@ -693,17 +675,6 @@ article {
     font-size: 30px;
 }
 
-/* .post_card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(251, 238, 219);
-    margin: 30px auto;
-    align-items: center;
-    border-radius: 5px;
-} */
-
 .oval {
     width: 250px;
     height: 250px;
@@ -715,18 +686,14 @@ article {
     float: left;
     margin: 30px 10px;
     shape-outside: circle();
-
     object-fit: cover;
     object-position: center;
-    /* shape-margin: 30px; */
-
 }
 
 .blocImg {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-right: 10px; */
     margin-top: 10px;
     align-items: center;
 }
@@ -736,8 +703,6 @@ h2 {
     display: inline-block;
     color: black;
     margin-bottom: 10px;
-    /* width: 80%; */
-
 }
 
 .inter_line {
@@ -800,59 +765,6 @@ h2 {
 
 }
 
-/* .img_post>img {
-    width: 100%;
-    height: 300px;
-    margin: auto;
-    object-fit: cover;
-}
-
-.bloc_text {
-    width: 100%;
-    height: 100%;
-    color: black;
-    align-items: center;
-    
-}
-
-.bloc_text>h2 {
-    display: flex;
-    flex-direction: column;
-    margin: 20px auto;
-    width: 100%;
-    flex-wrap: wrap;
-
-}
-
-.text_post > p {
-
-    width: 90%;
-    overflow: hidden;
-    margin: 0 auto;
-    text-align: justify;
-    padding: 10px
-}
-
-.text_post {
-    width: 100%;
-    overflow: hidden;
-    text-align: justify;
-    padding: 10px;
-    text-indent: 40px;
-
-}  */
-
-/* .date>span::before {
-    content: "";
-    position: absolute;
-    right: -7px;
-    top: -7px;
-    width: 50px;
-    height: auto;
-    background-color: rgb(19, 19, 19);
-    border-radius: 5px;
-    z-index: 11;
-} */
 
 .date>span::after {
     content: attr(data-text);
@@ -861,7 +773,6 @@ h2 {
     top: -7px;
     width: 50px;
     height: auto;
-    /* border: 1px solid blue; */
     color: white;
     font-size: 14px;
     overflow: hidden;
@@ -906,8 +817,6 @@ h2 {
     .post_card {
         flex-direction: column;
         align-items: center;
-        /* justify-content: space-evenly; */
-
     }
 
     .blocImg {
@@ -980,16 +889,12 @@ object-fit: contain;
     display: flex;
     flex-direction: column; 
      justify-content: space-evenly;
-  
-    /* align-items: center; */
-    /*  */
 }
 
 .titleDesktop {
     font-size: calc(25px + 1.5vh);
     margin-bottom: 0px;
     font-family: 'Playfair Display', serif;
-    /* text-transform: uppercase; */
 }
 
 .paragraf,

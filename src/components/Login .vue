@@ -5,14 +5,11 @@
     </div>
     <div class="wrapper ">
       <div class="container ">
-        
         <form class="login-form" autocomplete="on">
-          
           <span class="form-title"
             >Accés administration</span
           >
 
-          
           <div class="form-group" v-if="mode == 'signup'">
             <label for="nom">Nom</label>
             <input
@@ -25,8 +22,6 @@
             />
             <p class="ErrorInput" v-if="messageNom">{{ messageNom }}</p>
           </div>
-
-          
 
           <div class="form-group">
             <label for="email">Email</label>
@@ -61,20 +56,13 @@
           </div>
 
           <div class="form-group ">
-            <label for="submit" class="btn-label"></label>
-            <input
+            <button
               v-if="mode == 'login'"
-              type="button"
               name="submit"
               class="btn btn-primary btn-lg btn-block"
-              :keyUp="enter"
-              value="Connection"
-              @click="loginPost()"
-            />
-            
+              @click.prevent="loginPost()"
+            >Se connecter</button>
           </div>
-          
-          
         </form>
       </div>
     </div>
@@ -262,15 +250,7 @@ this.$router.push("9876545678hgh87yhju87")
     font-weight: 300;
 }
 
-/* body {
-  
-    font-family: 'Lato', sans-serif;
-    color: #FFF;
-    font-weight: 300;
-    background-color: white;
-       height: 100%;
-        
-} */
+
 .modalEr{
   position:absolute;
   top:50%;left:50%;
@@ -367,7 +347,12 @@ this.$router.push("9876545678hgh87yhju87")
   margin:0 auto;
 padding:1rem;
 }
-
+ button{
+  width:200px;
+  height:30px;
+box-shadow: 2px 2px 2px ;
+box-shadow: 2px 2px 2px rgba(48, 48, 245, 0.6);
+}
 .error{
 width: 100%;
 height: 50px;
