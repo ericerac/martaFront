@@ -114,9 +114,7 @@ export default {
     return {
       pageName: "",
       home: ref(false),
-
       calUpdate: ref(false),
-      // auth:true,
       bioUpdate: ref(false),
       bernUpdate: ref(false),
       EmperUpdate: ref(false),

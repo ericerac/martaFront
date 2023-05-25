@@ -1,5 +1,5 @@
 <template >
-  <div>
+  <div  :class="{ bgDark: dark }" @click="logClick(false)">
   <loader v-if="loading" />
 
   
@@ -7,7 +7,9 @@
     
   </div>
   <div class="bloc_nav" v-else>
-    <navbar :namePage="namePage" :dark="dark" @theme="dark = ($event)" />
+    <navbar :namePage="namePage" :dark="dark" @theme="dark = ($event)" 
+    :isActive="isActive" @active="isActive = ($event)"
+    />
   </div>
   <routerView />
   <div class="container-fluid-footer">
@@ -33,7 +35,8 @@ export default {
       navbarOk: false,
       dark: ref(""),
       backGround: ref(""),
-      siteDat:"site data test description"
+      siteDat:"site data test description",
+      isActive:ref(""),
     };
   },
 
@@ -64,7 +67,7 @@ export default {
   watch: {
     dark(n, o) {
       if (n == true) {
-        console.log("WATCH DARK TRUE", n);
+        // console.log("WATCH DARK TRUE", n);
         this.dark = true
         this.backGround = "rgb(22, 23, 29)"
         this.$store.commit("Theme", this.dark);
@@ -74,20 +77,27 @@ export default {
         this.backGround = "white"
         this.$store.commit("Theme", this.dark);
       }
-      console.log("WATCH DARK APP", n, o);
+      // console.log("WATCH DARK APP", n, o);
     },
     langPage(n,o){
-      console.log("LANG PAGE APP NEW",n);
-      console.log("LANG PAGE APP OLD",o);
+      // console.log("LANG PAGE APP NEW",n);
+      // console.log("LANG PAGE APP OLD",o);
     }
 
   },
   methods: {
+    logClick(x){
+console.log("CLICK APP");
+if (this.isActive == true){
+  console.log("CLICK APP TRUE ACTIVE");
+  this.isActive = x;
+}
+    },
     getNavData() {
       const n = "navbar";
       this.$store.dispatch("getNavData", n).then((res) => {
         if (res) {
-          console.log("RES GET NAV BAR APP");
+          // console.log("RES GET NAV BAR APP");
             this.navbarOk = true;
           
         }
@@ -122,8 +132,6 @@ export default {
   height: 100%;
 }
 
-
-html {}
 
 * {
   margin: 0;

@@ -38,7 +38,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
   function (config) {
     
-    console.log("INTER REQUEST CONFIG",config);
+     console.log("INTER REQUEST CONFIG",config);
 
     if ($cookies.get("user")) {
       const AuthUser = $cookies.get("user");
@@ -63,7 +63,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   function (response) {
     const supp = response.data.message;
-    console.log("RESPONSE", response);
+     console.log("RESPONSE", response);
     // console.log("RESPONSE STATUS", response.status);
 
     // console.log("RESPONSE INTER", supp);
@@ -94,7 +94,7 @@ instance.interceptors.response.use(
       store.commit("ModalSucces", true);
       store.commit("ModalMessage", response.data.message);
     } else if (response.status == 200) {
-      console.log("RESP 200", response);
+      // console.log("RESP 200", response);
       if(response.data.message == "Card effacé"){
         store.commit("ModalSucces", true);
         store.commit("ModalMessage", response.data.message);
@@ -109,7 +109,7 @@ instance.interceptors.response.use(
   //---------------___  ERREURS  ___-------------------
 
   (error) => {
-    console.log("ERROR INTER", error);
+    // console.log("ERROR INTER", error);
     // console.log("ERROR INTER", error.response.data.error);
     // store.commit("ModalError", true);
 
@@ -128,6 +128,7 @@ instance.interceptors.response.use(
       store.commit("ModalError", true);
       store.commit("ModalMessage", "page not found");
     } else if (error.response.data.error) {
+      console.log("ERREUR");
       store.commit("ModalError", true);
       store.commit("ModalMessage", error.response.data.error.text);
     } 
@@ -144,7 +145,6 @@ const store = createStore({
   setup() {
     const router = useRouter();
     const route = useRoute();
-   
   },
   state: {
     status: false,
@@ -197,7 +197,7 @@ const store = createStore({
       // eslint-disable-next-line no-undef
     },
     loading: (state, val) => {
-       console.log("MUT USER loading", val);
+      //  console.log("MUT USER loading", val);
       state.loading = val;
       // eslint-disable-next-line no-undef
     },
@@ -284,7 +284,7 @@ const store = createStore({
       $cookies.set("userHour", JSON.stringify(val));
     },
     Theme: (state, val) => {
-       console.log(" MUT THEME_1-----> ", val);
+      //  console.log(" MUT THEME_1-----> ", val);
       if ($cookies.get("userTime") === null) {
         // console.log(" MUT THEME_2-----> ", val);
         $cookies.set("userTime", JSON.stringify(val), "1h");
@@ -309,7 +309,7 @@ const store = createStore({
 
     viewWidth({ commit }) {
       if (window.navigator) {
-        console.log("NAVIGATOR----->", window);
+        // console.log("NAVIGATOR----->", window);
         // console.log("NAVIGATOR LANGUAGE----->", window.clientInformation.language);
         let dataBrowser = {
           screenHeight: window.innerHeight,
@@ -319,11 +319,11 @@ const store = createStore({
           browserVersion:
             window.clientInformation.userAgentData.brands[1].version,
         };
-        console.log("SCREEN USER", dataBrowser);
+        // console.log("SCREEN USER", dataBrowser);
         this.dataUser = dataBrowser;
         // this.isActive = false
       } else {
-        console.log("SANS NAVIGATOR");
+        // console.log("SANS NAVIGATOR");
       }
     },
 
@@ -331,7 +331,7 @@ const store = createStore({
       let userTime = $cookies.get("userTime");
       // console.log("USERTIME COOKIES VALUE", userTime);
       if (userTime) {
-         console.log(" NOT DISPATCH GET LOC");
+        //  console.log(" NOT DISPATCH GET LOC");
         let timeZone = $cookies.get("userHour");
         //  commit("Theme",timeZone)
         return;
@@ -342,7 +342,7 @@ const store = createStore({
             `https://api.bigdatacloud.net/data/ip-geolocation?ip=212.106.239.92&localityLanguage=en&key=bdc_fb0cd78789724292ba4ec846a10c55ed`
           )
           .then((res) => {
-            console.log("RESPONSE GEOLOC DATA----->", res.data.location.timeZone.localTime.split("T")[0]);
+            // console.log("RESPONSE GEOLOC DATA----->", res.data.location.timeZone.localTime.split("T")[0]);
 
             let userData = {
               locality: res.data.location.localityName,
@@ -364,7 +364,7 @@ const store = createStore({
               // console.log("IL FAIT NUIT");
             } else {
               commit("Theme", "day");
-              console.log("------- IL FAIT JOUR ----------");
+              // console.log("------- IL FAIT JOUR ----------");
             }
             let ahora = new Date();
 
@@ -376,7 +376,6 @@ const store = createStore({
           });
       });
     },
-
     //----------------* GET ADMIN AUTH *----------------//
     getAdminAuth: ({ commit }, c) => {
       return new Promise((resolve, reject) => {
@@ -395,7 +394,6 @@ const store = createStore({
               window.location.href = "http://localhost:8080/portada";
               //  that.$router.Push("/login");
             }
-
             reject(err);
           });
       });
@@ -444,7 +442,7 @@ const store = createStore({
 
     //----------------* GET NAV DATA *---------------//
     getNavData: ({ commit }, l) => {
-      console.log("GET NAV BAR INDEX",l);
+      // console.log("GET NAV BAR INDEX",l);
       commit("loading", true);
       let lang = l;
       let n = "navbar";
@@ -520,7 +518,7 @@ const store = createStore({
           .post("/inici/forgot-password", data)
           .then((res) => {
             if (res) {
-              console.log("RES FORGOT", res);
+              // console.log("RES FORGOT", res);
               commit("LinkNewPassword", res);
             }
 
@@ -540,9 +538,9 @@ const store = createStore({
             email: email,
           })
           .then((res) => {
-            console.log("RES FORGOT", res);
+            // console.log("RES FORGOT", res);
 
-            console.log("REPONSE", res);
+            // console.log("REPONSE", res);
             resolve(res);
           })
           .catch((err) => {

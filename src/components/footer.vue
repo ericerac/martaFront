@@ -85,11 +85,9 @@ export default {
 .BackGround {
     width: 100%;
     position:relative;
-   
-   
 }
 .backFoot{
-    background:rgb(22, 23, 29);
+    background:transparent;
 }
 .bloc_total {
     position:relative;
@@ -97,7 +95,6 @@ export default {
     flex-direction: row;
     justify-content: center;
     padding:0;
-    
 }
 .copyright{
 position:absolute;

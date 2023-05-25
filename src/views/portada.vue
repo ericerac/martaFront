@@ -1,5 +1,5 @@
 <template>
-  <div class="fond bdDay" :class="{ bgDark: darkTheme }">
+  <div class="fond bdDay" :class="{ bgDark: darkTheme }" @click="isActive == false">
 
     <div class="container text-center sticky_bloc">
       <div class="row bloc_thumb pt-5 pb-5">
@@ -106,6 +106,7 @@ export default {
       navbarOk: false,
       dark: ref(""),
       descriptionPage: ref("Pagina amb lliste d'espectacles i accesos als espectacles i les seves desciptcions i imatges"),
+      isActive:ref(),
     };
   },
 
@@ -150,9 +151,9 @@ export default {
   },
 
   watch: {
-    darkTheme(n, o) {
-      console.log("WATCH THEME ", n);
-    }
+    // darkTheme(n, o) {
+    //   console.log("WATCH THEME ", n);
+    // }
 
   },
 
@@ -177,7 +178,7 @@ export default {
 
     getPageData() {
       this.$store.commit("loading", true)
-      console.log("NAME  GET PAGE DATA");
+   
       const n = "portada";
       this.$store.dispatch("getPageData", n)
         .then((res) => {
@@ -206,10 +207,6 @@ export default {
 }
 
 svg {
-  /* font-family: 'Russo One', sans-serif; */
-  /* position: absolute; 
-  top:0; */
-
   width: auto;
   stroke-width: 18;
 }
@@ -294,8 +291,6 @@ svg text {
   margin-top: -10px;
   z-index: -1;
 }
-
-.svg_trans {}
 
 .titles {
   position: absolute;
