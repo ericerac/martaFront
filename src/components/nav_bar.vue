@@ -8,7 +8,7 @@
                 <ul class="navbare  col-12"  >
                     
                     <li class="show-nav" v-if="logoOn" > <img class="logo rounded-circle" src="../assets/logo/logo.png" alt="logo"></li>
-                    <li class="show-nav " :class="{ nameDisplay: namePage == 'portada'}"    > <router-link to="/portada">{{ navData[0].l_1 }}</router-link></li>
+                    <li class="show-nav " :class="{ nameDisplay: namePage == 'portada'}"    > <router-link to="/">{{ navData[0].l_1 }}</router-link></li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'bio'}"    ><router-link to="/bio"> {{ navData[0].l_2 }}</router-link></li>
                     <li class="show-nav" > <a href="#spectacle"> {{ navData[0].l_3 }}</a>
                     <ul class="show-list" >
@@ -37,12 +37,12 @@
                 
             </navbar>
 
-            <!-- <button type="button"  @click="$emit('active',Boolean(true))" class="btn_nav" :class="{ active: isActive }" > -->
-            <button type="button"  @click="isActive = !isActive" class="btn_nav" :class="{ active: isActive }" >
+          
+            <!-- <button type="button"  @click="isActive = !isActive" class="btn_nav" :class="{ active: isActive }" >
                <span class="lineN l1" :class="{ active: isActive }"></span>
                <span class="lineN l2" :class="{ active: isActive }"></span>
                <span class="lineN l3" :class="{ active: isActive }"></span>
-            </button>
+            </button> -->
     
 
         </header>

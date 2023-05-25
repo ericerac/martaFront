@@ -67,17 +67,12 @@
                     <button class="btn_dossier">Dossier</button>
                   </div>
                 </div>
-
               </div>
-
               <div class="line"></div>
-
-             
             </div>
           </div>
         </div>
       </div>
-    
     </div>
     
   </div>

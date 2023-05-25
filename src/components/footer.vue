@@ -55,11 +55,7 @@ export default {
       type:Boolean,
       required: true,}
   },
-//   computed:{
-//     ...mapState({
-// darkTheme:"darkTheme"
-//     })
-//   }
+
 }
 </script>
 

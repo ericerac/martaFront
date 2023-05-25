@@ -47,7 +47,6 @@ export default {
 
   },
 
-
   created: function () {
     this.getNavData();
     this.getLocation();

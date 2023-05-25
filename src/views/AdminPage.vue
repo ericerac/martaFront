@@ -12,7 +12,7 @@
     </div>
     <div class="row col-12 wrapper-wrap">
       <ul class="liste col-12 m-t-2">
-        <li> <router-link to="/portada"> Retour Web Inici</router-link> </li>
+        <li> <router-link to="/"> Retour Web Inici</router-link> </li>
         <li @click="goTo('portada')">home</li>
         <li @click="goTo('bio')">Bio </li>
         <li @click="goTo('calendar')">Calendar </li>
