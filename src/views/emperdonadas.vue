@@ -152,9 +152,13 @@ export default {
   width: 100%;
   height: auto;
   max-width: 900px;
-  margin: 0 auto
+  margin: 0 auto;
+ 
 }
+.img_thumb img{
 
+  box-shadow: -1px 14px 35px rgba(0,0,0,.3), 1px -11px 35px rgba(0,0,0,.3);
+}
 .title {
   margin-top: 30px;
 }

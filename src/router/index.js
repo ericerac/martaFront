@@ -58,7 +58,7 @@ const routes = [
   },
   {
     name: "portada",
-    path: "/portada",
+    path: "/",
     meta:{
       title:"Marta Renyer Home",
       
