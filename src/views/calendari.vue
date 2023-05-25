@@ -175,7 +175,8 @@ export default {
                     }
                 } else {
                     return {
-                        background: 'rgba(250, 19, 99, 0.3)'
+                        background: 'rgba(250, 19, 99, 0.3)',
+                      
                     }
                 }
             } else if (this.dateTimestamp(d) > this.dateNow) {
@@ -187,7 +188,8 @@ export default {
                     }
                 } else {
                     return {
-                        background: 'white'
+                        background: 'white',
+                     
                     }
                 }
             }
@@ -430,6 +432,8 @@ a {
     border: 1px solid red;
     box-shadow: 2px 2px 5px solid rgba(255, 0, 0, .9);
     padding: 10px 0;
+    color:white;
+    font-weight: 700;
 }
 .date_cal {
     display: flex;

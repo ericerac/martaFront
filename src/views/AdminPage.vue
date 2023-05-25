@@ -13,20 +13,14 @@
     <div class="row col-12 wrapper-wrap">
       <ul class="liste col-12 m-t-2">
         <li> <router-link to="/portada"> Retour Web Inici</router-link> </li>
-
         <li @click="goTo('portada')">home</li>
         <li @click="goTo('bio')">Bio </li>
-
-
         <li @click="goTo('calendar')">Calendar </li>
-
-        <!-- <li @click="goToB()">Bernadette</li> -->
         <li @click="goTo('bernadette')">Bernadette</li>
         <li @click="goTo('kakos')">Kako's</li>
         <li @click="goTo('emperdonadas')">Emperdonadas</li>
         <li @click="goTo('elvira')">Elvira</li>
-
-        <li @click="goToBlog()">Blog </li>
+        <!-- <li @click="goToBlog()">Blog </li> -->
 
 
       </ul>

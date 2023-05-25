@@ -3,7 +3,7 @@
   <loader v-if="loading" />
 
   
-  <div class="bloc_nav" v-if="navbarOk && namePage == 'post' && href == '/ad1920384756ytrdehdk' ">
+  <div class="bloc_nav" v-if=" href == '/ad1920384756ytrdehdk' ">
     
   </div>
   <div class="bloc_nav" v-else>
@@ -79,9 +79,11 @@ export default {
       }
       // console.log("WATCH DARK APP", n, o);
     },
-    langPage(n,o){
-      // console.log("LANG PAGE APP NEW",n);
-      // console.log("LANG PAGE APP OLD",o);
+    namePage(n,o){
+       console.log("NAME PAGE APP NEW",n);
+     if(n == "adminPage"){
+      console.log("namePage");
+     }
     }
 
   },

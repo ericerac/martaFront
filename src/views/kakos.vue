@@ -4,8 +4,8 @@
     <div class="row g-0">
       <div class="bloc_loop col-12" v-for="(i) in pageData" :key="i._id">
         <div class="header col-12">
-          <div class="header_title">
-            <h1 class="text" :class="darkTheme ? 'txtDark' : 'txtDay'">{{ i.title_1 }}</h1>
+          <div class="header_title bgTitleClT">
+            <h1 class="text title_1_1" :class="darkTheme ? 'txtDark' : 'txtDay'">{{ i.title_1 }}</h1>
           </div>
         </div>
         <div class="bloc_vid_img">
@@ -182,26 +182,47 @@ export default {
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 90%;
   margin: 0 auto;
-  height: 200px;
+  height: auto;
   align-items: center;
-
 }
 
 .bloc_loop {
   background: transparent;
 }
 
-.header_title h1 {
+/* .header_title h1 {
+
   font-family: 'Sawarabi Mincho', serif;
   font-size: var (--fontSizeTitle);
   width: min-content;
   height: auto;
-}
+} */
+.bgTitleClT{
+  width:350px;
+ height:170px;
 
+}
+.bgTitleClT{
+  position:relative;
+  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
+  background: var(--bgTitle);
+  z-index:2;
+  
+}
+.title_1_1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size:50px;
+  color:white
+ 
+}
 h6>strong {
   border-bottom: 1px solid black;
 }
@@ -312,7 +333,15 @@ iframe {
   box-shadow: inset 2px 2px black;
 
 }
+@media screen and (min-width:768px) and (max-height:500px) {
+  .header {
+    align-items: baseline;
+margin-top:50px;
+    margin-bottom: 50px
+  }
 
+
+}
 
 @media screen and (min-width:768px) {
 
@@ -321,8 +350,9 @@ iframe {
   }
 
   .header {
-    height: 100px;
+    height: auto;
     align-items: baseline;
+    margin-bottom: 30px;
   }
 
   .bloc_vid_img {
@@ -374,16 +404,7 @@ iframe {
   }
 }
 
-@media screen and (min-width:768px) and (max-height:500px) {
-  .header {
 
-    align-items: baseline;
-
-    margin-bottom: 50px
-  }
-
-
-}
 
 @media screen and (min-width:992px) {
   .bloc_vid_img {
@@ -393,12 +414,10 @@ iframe {
     clip-path: polygon(0 0, 50% 12%, 100% 0, 100% 88%, 50% 100%, 0 88%);
     background-color: chocolate;
   }
-
+  
   .vid {
     height: 510px;
-
     padding: 100px 0px;
-
   }
 
   .img_grid {
@@ -460,20 +479,21 @@ iframe {
     text-align: start;
     line-height: 30px;
   }
-
+  
   iframe {
     width: 70%
   }
 }
 
-@media screen and (min-width:1200px) {}
+@media screen and (min-width:1200px) {
+  
+}
 
 
 @media screen and (min-width:1440px) {
+  
   .bloc_vid_img {
-
     justify-content: center;
-
   }
 
   .vid {
@@ -490,6 +510,10 @@ iframe {
 }
 
 @media screen and (min-width:1660px) {
+  .header{
+    margin-top:50px;
+  }
+
   .bloc_sinopsis {
     max-width: 1000px;
   }
