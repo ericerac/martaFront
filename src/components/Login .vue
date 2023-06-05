@@ -9,7 +9,6 @@
           <span class="form-title"
             >Accés administration</span
           >
-
           <div class="form-group" v-if="mode == 'signup'">
             <label for="nom">Nom</label>
             <input
@@ -276,9 +275,6 @@ this.$router.push("9876545678hgh87yhju87")
    
     background-color: #bebdbd;
 }
-.page{
- 
-}
 .container {
     -webkit-box-shadow: 10px 0px 30px 5px rgba(0, 0, 0, 0.27);
     -moz-box-shadow: 10px 0px 30px 5px rgba(0, 0, 0, 0.27);
@@ -296,8 +292,6 @@ this.$router.push("9876545678hgh87yhju87")
     width: 300px;
     height: auto;
     border-radius: 15px;
-    
-
 }
 .login-form {
   position: relative;
@@ -312,7 +306,6 @@ this.$router.push("9876545678hgh87yhju87")
     padding: 0px;
     background-color: #f4f3f3;
 }
-
 
 .form-title {
     font-size: 25px;
@@ -339,7 +332,6 @@ this.$router.push("9876545678hgh87yhju87")
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-
 .form-group{
   display: flex;
   flex-direction: column;
@@ -366,7 +358,6 @@ background-color: white;
   left:0;
   right: 0;
   bottom: 0;
-
 }
 @media screen and (min-width: 576px) and (max-height: 440px){
   .container{

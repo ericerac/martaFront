@@ -44,7 +44,7 @@ const routes = [
   {
     name: "login",
     path: "/login",
-    component: () => import("../components/Login .vue"),
+    component: () => import("../views/login.vue"),
   },
   {
       name: "NewPass",
@@ -53,7 +53,7 @@ const routes = [
   },
   {
     name: "portada",
-    path: "/",
+    path: "/portada",
     meta:{
       title:"Marta Renyer Home",
 
@@ -123,7 +123,7 @@ const routes = [
   },
   {
     name: "creation",
-    path: "/creation",
+    path: "/",
     component: () => import("../views/creation.vue"),
   },
   {
@@ -157,10 +157,7 @@ router.beforeEach((to,from,next)=>{
   }
   document.title = to.meta?.title ?? 'Marta Renyer';
   document.metaTags = to.meta?.metaTags ?? 'default value'
-  
  
-  
-
 });
 
 export default router;
