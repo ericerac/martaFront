@@ -416,7 +416,7 @@ const store = createStore({
       } else {
         lang = "cat";
       }
-
+// console.log("LANGUE",lang,"PAGE",n);
       return new Promise((resolve, reject) => {
         instance
           .get(`inici?name=${n}&lang=${lang}`)

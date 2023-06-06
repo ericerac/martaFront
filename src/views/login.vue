@@ -122,16 +122,12 @@
           enterEmail: function (){
   this.$router.push("9876545678hgh87yhju87")
           },
-  
-          
-          
+
           // --------------- VALIDATION FORM-------------------//
           checkForm: function () {
               
               if (!this.firstName) {
                   this.messageNom = "* Le nom doit être renseigné."
-                  
-                 
                   return false
               } else if (!this.validFirstName(this.firstName)) {
                  this.messageNom = ' * Le nom ne doit pas contenir de caractères spéciaux';

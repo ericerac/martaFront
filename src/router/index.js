@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory, createMemoryHistory, VueRouter} from "vue-router";
 
 //  import login from "../components/Login.vue";
   //  const login = require("../components/Login .vue")
@@ -135,10 +135,14 @@ const routes = [
 
 ];
 
+
+
 const router = createRouter({
-  history: createWebHistory(),
+  //  history: createWebHistory(),
+    history: createWebHashHistory(),
   routes,
 });
+
 
 router.beforeEach((to,from,next)=>{
   // console.log("TO",to);

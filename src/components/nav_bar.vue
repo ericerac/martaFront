@@ -23,11 +23,11 @@
                     <!-- <li class="show-nav" :class="{ nameDisplay: namePage == 'post'}"><router-link to="/blog"> {{ navData[0].l_4 }}</router-link></li> -->
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'calendar' }"  ><router-link to="/cal"> {{ navData[0].l_5 }}</router-link></li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'contact' }"  ><router-link to="/contact"> {{ navData[0].l_6 }}</router-link></li>
-                    <!-- <li class="idiomes">
+                    <li class="idiomes">
                         <span class="idioma"  @click="lang('cat')">Cat</span>
                         <span class="idioma" @click="lang('es')">Es</span>
                         <span class="idioma"  @click="lang('fr')" >Fr</span>
-                    </li> -->
+                    </li>
                     <li class="svg_icon">
                       <img  v-if="dark" class="svg_icon" @click="$emit('theme',Boolean(false)) " src="../assets/design/sun_white.svg">
                     <img v-else class="svg_icon" @click="$emit('theme',Boolean(true)) " src="../assets/design/moon_fill_white.svg">
