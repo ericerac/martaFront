@@ -49,13 +49,13 @@
           </div>
           <div class="line"></div>
           <div class="synopsis col-10 ">
-            <label for="synopsis" class="label_area" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Synopsis </label>
+            <label for="synopsis" class="label_area" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Synopsis <em>paragraf </em> </label>
             <textarea class="synopsisArea col-12" name="synopsis" id="" cols="30" rows="5"
               v-model="pageData[0].synopsis"></textarea>
-            <label for="synopsis_1" class="label_area" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Synopsis 1</label>
+            <label for="synopsis_1" class="label_area" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Synopsis 1 <em>paragraf 1</em></label>
             <textarea class="synopsisArea col-12" name="synopsis_1" id="" cols="30" rows="5"
               v-model="pageData[0].synopsis_1"></textarea>
-            <label for="synopsis_2" class="label_area" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Synopsis 2</label>
+            <label for="synopsis_2" class="label_area" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Synopsis 2 <em>paragraf 2</em></label>
             <textarea class="synopsisArea col-12" name="synopsis_2" id="" cols="30" rows="5"
               v-model="pageData[0].synopsis_2"></textarea>
 
@@ -65,9 +65,11 @@
           </div>
           <div class="line"></div>
           <div class="video col-12">
-            <label for="videoLink" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Lien Video
-              <input type="text" class="inputVideo" name="videoLink" v-model="pageData[0].linkVideo">
+            <p>{{ pageData[0].linkVideo }}</p>
+            <label for="videoLink" :class=" [darkTheme ? 'txtDark' : 'txtDay'] ">Coller le Nouveau Lien Video ici &#10132;
+              <input  type="text" class="inputVideo" name="videoLink" v-model="pageData[0].linkVideo">
             </label>
+            <p > <u><em>Dans le cas d'un lien youtube, me contacter.</em></u>  </p>
 
             <!-- <div class="bloc_reverse">
               <div class="line"></div>
@@ -108,6 +110,9 @@
               <input type="button" name="submit" class="btn btn_up btn_all" keyUp="enter" value="Update"
                 @click="updatePage(pageData[0]._id)">
             </div>
+            <div class="btn_update info_text">
+                        Modification nécessaire pour chaque langue
+                    </div>
           </div>
         </div>
       </div>
@@ -256,6 +261,11 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 @import url("../styles/theme.css");
+.info_text{
+  background:white;
+  color:red;
+}
+
 .bloc {
   width: 500px;
   height: 500px;

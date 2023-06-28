@@ -8,63 +8,46 @@
 
     <div class="row bloc_newDate g-0" id="createDate">
 
-
       <div class="card_calendar" id="card_calendar" v-if="newDate">
-
-        
-        <span class="mode">Mode Create</span>
-        <label for="name">Show Name
+        <span class="mode_create">Mode Create</span>
+        <label  class="mode_create" for="name">Nom del espectacle <em>Obligatori</em>
           <input name="name" type="text" v-model="pageData.show_name" class="form-control"
-            placeholder="pageData.show_name" />
+            placeholder="Nom del espectacle" />
         </label>
 
         <div class="bloc_date">
-          
-            
-
-          <label for="name">Date
-            <input name="name" type="date" v-model="pageData.day" class="form-control" placeholder="pageData.day"
-              min="1" max="31" />
+          <label  class="mode_create" for="name">Date <em>Obligatori</em>
+            <input name="name" type="date" v-model="pageData.day" class="form-control" placeholder="Dia del show" min="1"
+              max="31" />
           </label>
-          <label for="date_time">Hour
-            <input name="name" type="time" v-model="pageData.hour" class="form-control" placeholder="pageData.hour" />
+          <label  class="mode_create" for="date_time">Hour <em> No Obligatori pero molt aconsellat</em>
+            <input name="name" type="time" v-model="pageData.hour" class="form-control" placeholder="hora del show si no posis es posara 'per definir'" />
           </label>
-          
-          
 
-
-
-      
         </div>
-        <label for="event">
-          Event
-          <input name="event" type="text" v-model="pageData.event" class="form-control" placeholder="pageData.name" />
+        <label  class="mode_create" for="event">
+          Nom del esdeveniment <em>Obligatori</em>
+          <input name="event" type="text" v-model="pageData.event" class="form-control" placeholder="Nom del festival esdeveniment etc..." />
         </label>
-        <label for="name">Lloc
-          <input name="name" type="text" v-model="pageData.detail" class="form-control" placeholder="pageData.name" />
+        <label  class="mode_create" for="name">Lloc del esdeveniment<em>Obligatori (max 50 caractères)</em>
+          <input name="name" type="text" v-model="pageData.detail" class="form-control" placeholder="Lloc del esdeveniment" />
         </label>
-        <label for="Badge">
-          Badge Info
-          <input name="Badge" type="text" v-model="pageData.info_top" class="form-control"
-            placeholder="pageData.name" />
+        <label  class="mode_create" for="Badge">
+          Badge Info <em> No Obligatori (max 20 caractères)</em>
+          <input name="Badge" type="text" v-model="pageData.info_top" class="form-control" placeholder="Info qui s'affiche au survol de la date" />
         </label>
 
-        <label for="name">link_event
-          <input name="name" type="text" v-model="pageData.link_event" class="form-control"
-            placeholder="pageData.name" />
+        <label  class="mode_create" for="name">Enllaç esdeveniment <em> No Obligatori pero molt aconsellat</em>
+          <input name="name" type="text" v-model="pageData.link_event" class="form-control" placeholder="Enllaç pagina esdeveniment festival feste etc..." />
+        </label>
+
+        <!-- <label  class="mode_create" for="name">link_show
+          <input name="name" type="text" v-model="pageData.link_show" class="form-control" placeholder="Enllaç pagina del espectacle de la teva web" />
         </label>
         
-        <label for="name">link_show
-          <input name="name" type="text" v-model="pageData.link_show" class="form-control"
-            placeholder="pageData.name" />
-        </label>
-        <!-- <label for="name">Name
-                  <input name="name" type="text" v-model="pageData[0].name" class="form-control"
-                      placeholder="pageData.name">
-              </label> -->
-        <label for="name">image
-          <input name="name" type="text" v-model="pageData.image" class="form-control" placeholder="pageData.name" />
-        </label>
+        <label  class="mode_create" for="name">image
+          <input name="name" type="text" v-model="pageData.image" class="form-control" placeholder="No cal imatge per que no vols" />
+        </label> -->
         <form action="/uploadmultiple">
           <label for="image">
             <input type="file" name="image" id="PhotoPerfilChange" ref="file" @change="FileUpload"
@@ -82,7 +65,7 @@
         <div class="card_calendar">
           <span class="mode ">Mode Update</span>
           <label for="showName">
-            Show Name
+            Nom del espectacle
             <input name="showName" type="text" v-model="data.show_name" class="form-control"
               placeholder="pageData.name" />{{ index }}
           </label>
@@ -94,35 +77,35 @@
               <input name="name" type="date" v-model="data.day" class="form-control" placeholder="data.day" />
             </label>
 
-          
-            <label for="name">Hour
+
+            <label for="name">Hora
               <input name="name" type="time" class="form-control" v-model="data.hour" placeholder="jeudi" />
             </label>
           </div>
 
           <!-- *******    BLOC INFO ******* -->
           <label for="event">
-          Event
-          <input name="event" type="text" v-model="data.event" class="form-control" placeholder="pageData.name" />
-        </label>
+            Event
+            <input name="event" type="text" v-model="data.event" class="form-control" placeholder="pageData.name" />
+          </label>
           <div class="bloc_event col-12">
             <label for="detail">
-              Lloc Place (max 50 caractères)
+              Lloc del esdeveniment (max 50 caractères)
               <input name="detail" type="text" v-model="data.detail" class="form-control" placeholder="index.name" />
             </label>
           </div>
 
           <label for="Badge">Badge Info (max 20 caractères)
-            <input name="Badge" type="text" v-model="data.info_top" class="form-control" placeholder="pageData.name" maxlength="20" />
+            <input name="Badge" type="text" v-model="data.info_top" class="form-control" placeholder="pageData.name"
+              maxlength="20" />
           </label>
 
 
           <!-- *******    BLOC LINK ******* -->
 
           <div class="bloc_link col-12">
-            <label for="linkEvent">Link event
-              <input name="linkEvent" type="text" v-model="data.link_event" class="form-control"
-                placeholder="no link" />
+            <label for="linkEvent">Enllaç esdeveniment 
+              <input name="linkEvent" type="text" v-model="data.link_event" class="form-control" placeholder="no link" />
             </label>
 
             <!-- <label for="linkShow">Link Show personal webSite page
@@ -144,9 +127,9 @@
           <label for="image">
             <input type="file" name="image" id="Img_new" ref="file" @change="FileUpload"
               accept="image/png, image/jpeg, image/jpg "/></label> -->
-              
+
           <div class="btn-action">
-            
+
             <button @click="updatePage(data._id, index)">Update</button>
             <button @click="delCard(data._id)">Delete</button>
           </div>
@@ -183,7 +166,7 @@ if (new Date().getHours() < 18) {
   ahora = Date.now();
   console.log("HEURE DU CHARGEMENT DATE NOW---->", ahora);
   let date = new Date(ahora)
-  console.log("NEW DATE",date);
+  console.log("NEW DATE", date);
   // 1669720999459
 
 
@@ -194,7 +177,7 @@ if (new Date().getHours() < 18) {
   ahora = Date.now();
   console.log("HEURE DU CHARGEMENT DATE NOW +18---->", ahora);
   let date = new Date(ahora)
-  console.log("NEW DATE",date);
+  console.log("NEW DATE", date);
 }
 
 
@@ -212,17 +195,17 @@ export default {
       DateShow: null,
       Preview_imgUrl: "",
       value: "",
-      date:"",
-      
+      date: "",
+
 
     };
   },
-  setup(){
-      const dateSelected = new Date()
-      return {
-        dateSelected
-      }
-    },
+  setup() {
+    const dateSelected = new Date()
+    return {
+      dateSelected
+    }
+  },
   created: function () {
     console.log(" MOUNTED CALUPDATE ");
 
@@ -233,16 +216,16 @@ export default {
   components: {
     // ModalMessage,
     // prev,
-  
-   
+
+
     // ModalSucces,
-   
+
   },
   watch: {
-   pageData(newValue, oldValue) {
-    this.pageData = newValue;
-    console.log("NEW PAGEDATA",newValue);
-  }
+    pageData(newValue, oldValue) {
+      this.pageData = newValue;
+      console.log("NEW PAGEDATA", newValue);
+    }
   },
 
   computed: {
@@ -250,12 +233,12 @@ export default {
       modal: "modal",
       modalMessage: "modalMessage",
       // modalSucces:"modalSucces",
-      pageData:"pageData",
+      pageData: "pageData",
       preview_component: "preview_component",
     }),
-    page(){
+    page() {
 
-  return this.pageData
+      return this.pageData
 
     },
   },
@@ -324,7 +307,7 @@ export default {
         bodyFormData.append("hour", cardUp[0].hour);
         bodyFormData.append("link_event", cardUp[0].link_event);
         bodyFormData.append("link_show", cardUp[0].link_show);
-        bodyFormData.append("name", "calendar");
+        bodyFormData.append("name", "cal");
         bodyFormData.append("show_name", cardUp[0].show_name);
       } else {
         bodyFormData.append("id", cardUp[0]._id);
@@ -336,7 +319,7 @@ export default {
         bodyFormData.append("hour", cardUp[0].hour);
         bodyFormData.append("link_event", cardUp[0].link_event);
         bodyFormData.append("link_show", cardUp[0].link_show);
-        bodyFormData.append("name", "calendar");
+        bodyFormData.append("name", "cal");
         bodyFormData.append("show_name", cardUp[0].show_name);
       }
 
@@ -348,16 +331,16 @@ export default {
       this.$store
         .dispatch("updatePage", {
           data: bodyFormData,
-          page: "calendar",
+          page: "cal",
         })
 
         .then((response) => {
-          
+
           if (response.status == 200) {
-            console.log("RESPONSE CALUPDATE 2", response);
-           //     location.reload();
-          file = null;
-        
+            // console.log("RESPONSE CALUPDATE 2", response);
+            //     location.reload();
+            file = null;
+
           }
         })
         .catch((response) => { });
@@ -369,7 +352,7 @@ export default {
       //     return;
       // }
       console.log("this.fileSelected---->", this.fileSelected);
-    
+
 
       let bodyFormData = new FormData();
 
@@ -387,7 +370,7 @@ export default {
         bodyFormData.append("hour", this.pageData.hour);
         bodyFormData.append("link_event", this.pageData.link_event);
         bodyFormData.append("link_show", this.pageData.link_show);
-        bodyFormData.append("name", "calendar");
+        bodyFormData.append("name", "cal");
         bodyFormData.append("show_name", this.pageData.show_name);
       } else {
         // bodyFormData.append("id", this.pageData._id);
@@ -400,7 +383,7 @@ export default {
         bodyFormData.append("hour", this.pageData.hour);
         bodyFormData.append("link_event", this.pageData.link_event);
         bodyFormData.append("link_show", this.pageData.link_show);
-        bodyFormData.append("name", "calendar");
+        bodyFormData.append("name", "cal");
         bodyFormData.append("show_name", this.pageData.show_name);
       }
       this.$store
@@ -417,11 +400,11 @@ export default {
 
     delCard: function (x) {
       window.confirm("Quel dommage ! Supprimer ? sur? ");
-      console.log("ID CARD");
+      // console.log("ID CARD");
       this.$store
         .dispatch("delCard", {
           idCard: x,
-          page: "calCard",
+          page: "cal",
         })
 
         .then((response) => {
@@ -432,7 +415,7 @@ export default {
             console.log("FILTER", newCal);
             this.pageData = newCal
             // console.log("RESPONSE DEL CARD", response);
-            alert("Votre Date a bien été modifié");
+            alert("Votre Date a bien été éfacée");
             //  this.$router.push("/profil")
           }
         })
@@ -470,13 +453,14 @@ export default {
 .bloc_loop {
   /* border: 1px solid blue; */
   margin: 0rem auto;
-  width:100%
-  
+  width: 100%
 }
-.col-12{
-width:100%;
+
+.col-12 {
+  width: 100%;
 }
-.col-xl-4{
+
+.col-xl-4 {
   width: 24%;
 }
 
@@ -492,35 +476,39 @@ width:100%;
   margin: 1rem auto;
   padding: 0.5rem;
 }
+
 /* START daqtepicker */
-input[type="date"],[type="time"]{
-    background-color: #0080ff;
-    padding: 5px;
-    appearance: none;
-    
-    
-    font-family: "Roboto Mono",monospace;
-    color: #ffffff;
-    font-size: 18px;
-    border: 1px solid white;
-   
-    outline: 1px solid rgb(3, 26, 232);
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 0.2rem rgba(1, 32, 65, 0.25);
+input[type="date"],
+[type="time"] {
+  background-color: #0080ff;
+  padding: 5px;
+  appearance: none;
+
+
+  font-family: "Roboto Mono", monospace;
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px solid white;
+
+  outline: 1px solid rgb(3, 26, 232);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 0.2rem rgba(1, 32, 65, 0.25);
 }
 
-::-webkit-calendar-picker-indicator{
-    background-color: #ecedf8;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
-    color: #ffffff;
-   
-  
+::-webkit-calendar-picker-indicator {
+  background-color: #ecedf8;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  color: #ffffff;
+
+
 }
+
 ::-webkit-inner-spin-button {
-  display:block;
+  display: block;
 }
+
 /* END daqtepicker */
 .bloc_date {
   display: flex;
@@ -581,39 +569,44 @@ label {
   width: 100%;
 }
 
-.mode {
-  font-size: 12px;
-  text-align: end;
+.mode_create {
+  font-size: 16px;
+  text-align: start;
 }
+
 @media screen and (max-width:576px) {
-  .bloc_update{
- justify-content: space-between;
- 
+  .bloc_update {
+    justify-content: space-between;
+
   }
+
   .bloc {
-  width: 100%;
-}
+    width: 100%;
+  }
 
 }
+
 @media screen and (min-width:992px) {
-  .col-lg-4{
-  width:32%;
+  .col-lg-4 {
+    width: 32%;
+  }
+
 }
-  
-}
+
 @media screen and (min-width:1024px) {
-  .col-lg-4{
-  width:30%;
-}
-.bloc_update{
- justify-content: center;
- 
+  .col-lg-4 {
+    width: 30%;
+  }
+
+  .bloc_update {
+    justify-content: center;
+
   }
 }
-@media screen and (min-width:1280px) {
-  .col-lg-4{
-  width:25%;
-}
 
-}
-</style>
+@media screen and (min-width:1280px) {
+  .col-lg-4 {
+    width: 25%;
+  }
+
+}</style>

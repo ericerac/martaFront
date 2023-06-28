@@ -106,7 +106,7 @@ export default {
       navbarOk: false,
       dark: ref(""),
       descriptionPage: ref("Pagina amb lliste d'espectacles i accesos als espectacles i les seves desciptcions i imatges"),
-      isActive:ref(),
+      isActive: ref(),
     };
   },
 
@@ -178,7 +178,7 @@ export default {
 
     getPageData() {
       this.$store.commit("loading", true)
-   
+
       const n = "portada";
       this.$store.dispatch("getPageData", n)
         .then((res) => {
@@ -567,11 +567,6 @@ li {
 
 /* BLOC_THUMB  */
 
-
-
-
-
-
 @media screen and (min-width:768px) and (max-height:440px) {
 
   .img_principale {
@@ -586,7 +581,6 @@ li {
 
   .img_back {
     width: 100%;
-
   }
 
   .left-bloc {
@@ -823,4 +817,5 @@ li {
   }
 }
 
-/* ************  FIN anim__navBar */</style>
+/* ************  FIN anim__navBar */
+</style>

@@ -123,7 +123,8 @@
               </iframe>
               <p class="linkVideo" :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].linkVideo }}
               </p>
-              <label for="linkVideo" class="link_video">
+              <label for="videoLink" :class="[darkTheme ? 'txtDark' : 'txtDay']">Coller le Nouveau Lien Video ici
+                &#10132;
                 <input type="text" name="linkVideo" v-model="pageData[0].linkVideo" />
               </label>
             </div>
@@ -166,7 +167,12 @@
           </div>
         </div>
         <div class="btn_up_">
-          <button class="btn btn_up btn_all" @click="updateKakos(pageData[0]._id)">Update</button>
+          <div class="btn_up_">
+            <button class="btn btn_up btn_all" @click="updateKakos(pageData[0]._id)">Update</button>
+          </div>
+          <div class="btn_update info_text">
+            Modification nécessaire pour chaque langue
+          </div>
         </div>
       </div>
 
@@ -270,7 +276,7 @@ export default {
     },
 
     updateKakos(p) {
-     
+
       let bodyFormData = new FormData();
 
       let videoNew = this.pageData[0].linkVideo;
@@ -484,6 +490,11 @@ export default {
   left: 0;
 }
 
+.info_text {
+  background: white;
+  color: red;
+}
+
 .img_card {
   margin: 0 auto;
   width: 350px;
@@ -547,14 +558,16 @@ export default {
 
 }
 
-iframe{
-  width:100%;
-  height:250px;
+iframe {
+  width: 100%;
+  height: 250px;
 }
-.video{
-  width:100%;
-  height:auto;
+
+.video {
+  width: 100%;
+  height: auto;
 }
+
 .bloc_loop {
   border: 2px dashed black;
   margin-top: 20px
@@ -695,5 +708,4 @@ label {
   .header {
     margin-top: 30px
   }
-}
-</style>
+}</style>

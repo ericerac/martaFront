@@ -44,7 +44,8 @@
                             <h3 class="title_sinopsis" :class="darkTheme ? 'txtDark' : 'txtDay'">Sinopsis</h3>
                             <textarea class="synopsisArea col-12" name="synopsis_1" id="" cols="30" rows="5"
                                 v-model="pageData[0].synopsis_1"></textarea>
-                            <label for="synopsis_2" class="label_area" :class="darkTheme ? 'txtDark' : 'txtDay'">Synopsis 2</label>
+                            <label for="synopsis_2" class="label_area" :class="darkTheme ? 'txtDark' : 'txtDay'">Synopsis
+                                2</label>
                             <textarea class="synopsisArea col-12" name="synopsis_2" id="" cols="30" rows="5"
                                 v-model="pageData[0].synopsis_2"></textarea>
                         </div>
@@ -55,33 +56,24 @@
                                 <h4 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].p_0 }}</h4>
                                 <input name="p_1" type="text" v-model="pageData[0].p_0" placeholder="pageData[0].p_0" />
                                 <span>
-                                    <input name="p_1" type="text" v-model="pageData[0].p_1" 
-                                    placeholder="pageData[0].p_1" />
-                                    <input name="p_1" type="text" v-model="pageData[0].p_2" 
-                                    placeholder="pageData[0].p_2" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_1" placeholder="pageData[0].p_1" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_2" placeholder="pageData[0].p_2" />
                                 </span>
                                 <span>
-                                    <input name="p_1" type="text" v-model="pageData[0].p_3" 
-                                    placeholder="pageData[0].p_3" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_3" placeholder="pageData[0].p_3" />
 
-                                    <input name="p_1" type="text" v-model="pageData[0].p_4" 
-                                    placeholder="pageData[0].p_4" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_4" placeholder="pageData[0].p_4" />
                                 </span>
                                 <span>
-                                    <input name="p_1" type="text" v-model="pageData[0].p_5"
-                                     placeholder="pageData[0].p_5" />
-                                    <input name="p_1" type="text" v-model="pageData[0].p_6" 
-                                    placeholder="pageData[0].p_6" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_5" placeholder="pageData[0].p_5" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_6" placeholder="pageData[0].p_6" />
                                 </span>
                                 <span>
-                                    <input name="p_1" type="text" v-model="pageData[0].p_7" 
-                                    placeholder="pageData[0].p_7" />
-                                    <input name="p_1" type="text" v-model="pageData[0].p_8" 
-                                    placeholder="pageData[0].p_8" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_7" placeholder="pageData[0].p_7" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_8" placeholder="pageData[0].p_8" />
                                 </span>
                                 <span>
-                                    <input name="p_1" type="text" v-model="pageData[0].p_9" 
-                                    placeholder="pageData[0].p_9" />
+                                    <input name="p_1" type="text" v-model="pageData[0].p_9" placeholder="pageData[0].p_9" />
                                     <input name="p_1" type="text" v-model="pageData[0].p_10"
                                         placeholder="pageData[0].p_10" />
                                 </span>
@@ -105,16 +97,11 @@
                             </div>
                             <div class="info_basic fiche">
                                 <h4 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].p_17 }}</h4>
-                                <input name="p_1" type="text" v-model="pageData[0].p_17" 
-                                placeholder="pageData[0].p_17" />
-                                <input name="p_1" type="text" v-model="pageData[0].p_18" 
-                                placeholder="pageData[0].p_18" />
-                                <input name="p_1" type="text" v-model="pageData[0].p_19" 
-                                placeholder="pageData[0].p_19" />
-                                <input name="p_1" type="text" v-model="pageData[0].p_20" 
-                                placeholder="pageData[0].p_20" />
-                                <input name="p_1" type="text" v-model="pageData[0].p_21" 
-                                placeholder="pageData[0].p_21" />
+                                <input name="p_1" type="text" v-model="pageData[0].p_17" placeholder="pageData[0].p_17" />
+                                <input name="p_1" type="text" v-model="pageData[0].p_18" placeholder="pageData[0].p_18" />
+                                <input name="p_1" type="text" v-model="pageData[0].p_19" placeholder="pageData[0].p_19" />
+                                <input name="p_1" type="text" v-model="pageData[0].p_20" placeholder="pageData[0].p_20" />
+                                <input name="p_1" type="text" v-model="pageData[0].p_21" placeholder="pageData[0].p_21" />
                             </div>
                         </div>
                         <div class="bloc_video">
@@ -129,8 +116,10 @@
                                 <!-- <p><a href="https://vimeo.com/373748069">EL GRAN CABARET ELVIRA_MARTA RENYER</a> from <a
                                     href="https://vimeo.com/martaaa">MartaRenyer</a> on <a
                                     href="https://vimeo.com">Vimeo</a>.</p> -->
-                                <p class="linkVideo" :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].linkVideo }}</p>
-                                <label for="linkVideo" class="link_video">
+                                <p class="linkVideo" :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].linkVideo }}
+                                </p>
+                                <label for="videoLink" :class="[darkTheme ? 'txtDark' : 'txtDay']">Coller le Nouveau Lien Video ici
+                                    &darr;
                                     <input type="text" name="linkVideo" v-model="pageData[0].linkVideo" />
                                 </label>
                             </div>
@@ -142,6 +131,9 @@
                             <label for="submit"></label>
                             <input type="button" name="submit" class="btn btn_up btn_all" keyUp="enter" value="Update"
                                 @click="updatePage(pageData[0]._id)" />
+                            <div class="btn_update info_text">
+                                Modification nécessaire pour chaque langue
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -165,7 +157,7 @@ export default {
             fileSelected: "",
         };
     },
-    
+
     created: function () {
         // this.getNavData();
         // this.getPageData();
@@ -174,11 +166,11 @@ export default {
     computed: {
         ...mapState({
             imgData: "imgData",
-             pageData: "pageData",
+            pageData: "pageData",
             navData: "navData",
-            darkTheme:"darkTheme"
+            darkTheme: "darkTheme"
         }),
-        
+
     },
     components: {},
     methods: {
@@ -246,7 +238,7 @@ export default {
         //             console.log("RESPONSE GETPAGEDATA");
         //        }
         //     });
-            
+
         // },
         // getNavData() {
         //     const n = "navbar";
@@ -384,12 +376,19 @@ export default {
     padding: 0;
 }
 
+.info_text {
+    background: white;
+    color: red;
+}
+
 .master {
     position: relative;
 }
-textarea{
-    padding:5px;
+
+textarea {
+    padding: 5px;
 }
+
 .bloc_nav {
     position: fixed;
     top: 30px;
@@ -432,9 +431,11 @@ textarea{
     display: flex;
     flex-direction: column;
 }
-.fiche >input {
-    margin:5px auto
+
+.fiche>input {
+    margin: 5px auto
 }
+
 .fiche>span {
     margin: 10px auto;
 }
@@ -448,7 +449,7 @@ span>input {
     width: 300px;
     height: auto;
     margin-bottom: 30px;
-    margin:20px auto
+    margin: 20px auto
 }
 
 h1 {
@@ -528,20 +529,22 @@ iframe {
     }
 
     .img_thumb {
-       
+
         margin: 0 auto;
         object-fit: cover;
-     
+
     }
 }
 
 @media screen and (min-width: 768px) and (max-height: 500px) {
-     .bloc_img{
+    .bloc_img {
         flex-direction: row;
-     }
-     .bloc_btn_file{
-flex-direction: column;
-     }
+    }
+
+    .bloc_btn_file {
+        flex-direction: column;
+    }
+
     .bloc_nav {
         position: fixed;
         margin: 0 auto;
@@ -570,7 +573,7 @@ flex-direction: column;
     }
 
     .img_thumb {
-        
+
         height: auto;
         margin: 0 auto;
         object-fit: cover;
@@ -595,9 +598,11 @@ flex-direction: column;
     .fiches {
         flex-direction: row-reverse;
     }
-    .bloc_btn_file{
-flex-direction: column;
-     }
+
+    .bloc_btn_file {
+        flex-direction: column;
+    }
+
     .bloc_sinopsis_text {
         width: 70%;
         margin: 30px auto;
@@ -608,22 +613,25 @@ flex-direction: column;
     .bloc_img {
         flex-direction: row;
         width: 90%;
-        height:auto;
+        height: auto;
         margin: 0 auto;
     }
+
     .img_thumb {
-        margin:auto
+        margin: auto
     }
+
     .bloc_thumb {
-        width:80%;
+        width: 80%;
         margin-top: 70px;
         align-items: center;
     }
-    .img_bloc{
+
+    .img_bloc {
         height: auto;
         display: flex;
         flex-direction: column;
-      justify-content: center;
+        justify-content: center;
         align-items: center;
     }
 

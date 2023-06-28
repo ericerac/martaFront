@@ -15,7 +15,7 @@
         <li> <router-link to="/"> Retour Web Inici</router-link> </li>
         <li @click="goTo('portada')">home</li>
         <li @click="goTo('bio')">Bio </li>
-        <li @click="goTo('calendar')">Calendar </li>
+        <li @click="goTo('cal')">Calendar </li>
         <li @click="goTo('bernadette')">Bernadette</li>
         <li @click="goTo('kakos')">Kako's</li>
         <li @click="goTo('emperdonadas')">Emperdonadas</li>
@@ -206,7 +206,7 @@ shutDownComponent(){
             this.$store.dispatch("getImgData", x)
             this.home = true;
             // console.log("RES BLOC IF ADMIN PAGE");
-          } else if (response && x == "calendar") {
+          } else if (response && x == "cal") {
             this.calUpdate = true;
           } else if (response && x == "bio") {
             this.$store.dispatch("getImgData", x).then((res) => {

@@ -1,87 +1,92 @@
 <template>
     <div class="container p-0 text-center">
-        <div class="row">
-            <span class="form-title">
-                Vous êtes sur la page:
-                <strong>{{ pageData[0].name }}.{{ pageData[0].lang }}</strong></span>
-            <div class="header_bio">
-                <div class="bloc_header">
-                    <template v-if="preview && 0 === inputSelected">
+        <div class="bloc_update">
+            <div class="row">
+                <span class="form-title">
+                    Vous êtes sur la page:
+                    <strong>{{ pageData[0].name }}.{{ pageData[0].lang }}</strong></span>
+                <div class="header_bio">
+                    <div class="bloc_header">
+                        <template v-if="preview && 0 === inputSelected">
 
-                        <img :src="preview" class="img" />
+                            <img :src="preview" class="img" />
 
-                    </template>
-                    <img v-else class="img" :src="pageData[0].imageUrl" alt="" />
-                </div>
-            </div>
-
-
-            <label for="image" class="btn_upload">
-                <figure>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
-                        <path
-                            d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
-                        </path>
-                    </svg>
-                </figure>
-                <input class="btn_upload_file" type="file" name="image" id="image" ref="file" @change="FileUpload"
-                    accept="image/png, image/jpeg, image/jpg, image/gif, image/webp" />
-                <p class="fileName" v-if="fileName && 0 === inputSelected">{{ fileName }}</p>
-            </label>
-            <div class="btn-action">
-
-                <div class="btn_update">
-                    <label for="retour"></label>
-                    <input type="button" name="retour" class="btn btn_del btn_all" keyUp="enter" value="Cancel"
-                        @click="FileCancel">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row col-12">
-            <div class="bloc_left  col-12 text-center">
-                <div class="title_subTitlte">
-
-                    <h1 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].title_1 }} </h1>
-                    <label for="Titre"> Titre
-                        <input type="text" class="inputVideo" name="Titre" v-model="pageData[0].title_1">
-                    </label>
-                    <h2 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].subTitle_1 }} </h2>
-                    <label for="Titre"> Titre
-                        <input type="text" class="inputVideo" name="Titre" v-model="pageData[0].subTitle_1">
-                    </label>
-
-                </div>
-                <label for="p1" class="label_area" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 1 <em>(330
-                        caractères)</em> </label>
-                <textarea rows="10" cols="50" name="p1" type="text" class="description_bio p" v-model="pageData[0].p_1">
-                                    </textarea>
-                <!-- <textarea rows="10" cols="50" name="p1" type="text" class="description_bio p" v-model="pageData[0].p_1">
-                                    </textarea> -->
-                {{ p1 }}
-                <label for="p2" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 2</label>
-                <textarea rows="10" cols="50" name="p2" type="text" class="description_bio p" v-model="pageData[0].p_2">
-                                    </textarea>
-                <label for="p3" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 3</label>
-                <textarea rows="10" cols="50" name="p3" type="text" class="description_bio p" v-model="pageData[0].p_3">
-                                    </textarea>
-                <label for="p4" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 4</label>
-                <textarea rows="10" cols="50" name="p4" type="text" class="description_bio p" v-model="pageData[0].p_4">
-                                    </textarea>
-                <div class="bloc_tilte_2">
-                    <h2 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].title_2 }}</h2>
-                    <label for="img_text">titre rubrique
-                        <input type="text" name="img_text" v-model="pageData[0].title_2" />
-                    </label>
+                        </template>
+                        <img v-else class="img" :src="pageData[0].imageUrl" alt="" />
+                    </div>
                 </div>
 
-                <div class="btn_action">
+
+                <label for="image" class="btn_upload">
+                    <figure>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                            <path
+                                d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                            </path>
+                        </svg>
+                    </figure>
+                    <input class="btn_upload_file" type="file" name="image" id="image" ref="file" @change="FileUpload"
+                        accept="image/png, image/jpeg, image/jpg, image/gif, image/webp" />
+                    <p class="fileName" v-if="fileName && 0 === inputSelected">{{ fileName }}</p>
+                </label>
+                <div class="btn-action">
+
                     <div class="btn_update">
+                        <label for="retour"></label>
+                        <input type="button" name="retour" class="btn btn_del btn_all" keyUp="enter" value="Cancel"
+                            @click="FileCancel">
+                    </div>
+                </div>
 
-                        <label for="submit"></label>
-                        <input type="button" name="submit" class="btn btn_up btn_all" keyUp="enter" value="Update"
-                            @click="updateBio(pageData[0]._id)">
+            </div>
+
+            <div class="row col-12">
+                <div class="bloc_left  col-12 text-center">
+                    <div class="title_subTitlte">
+
+                        <h1 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].title_1 }} </h1>
+                        <label for="Titre"> Titre
+                            <input type="text" class="inputVideo" name="Titre" v-model="pageData[0].title_1">
+                        </label>
+                        <h2 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].subTitle_1 }} </h2>
+                        <label for="Titre"> Titre
+                            <input type="text" class="inputVideo" name="Titre" v-model="pageData[0].subTitle_1">
+                        </label>
+
+                    </div>
+                    <label for="p1" class="label_area" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 1 <em>(330
+                            caractères)</em> </label>
+                    <textarea rows="10" cols="50" name="p1" type="text" class="description_bio p" v-model="pageData[0].p_1">
+                                    </textarea>
+                    <!-- <textarea rows="10" cols="50" name="p1" type="text" class="description_bio p" v-model="pageData[0].p_1">
+                                    </textarea> -->
+                    {{ p1 }}
+                    <label for="p2" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 2</label>
+                    <textarea rows="10" cols="50" name="p2" type="text" class="description_bio p" v-model="pageData[0].p_2">
+                                    </textarea>
+                    <label for="p3" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 3</label>
+                    <textarea rows="10" cols="50" name="p3" type="text" class="description_bio p" v-model="pageData[0].p_3">
+                                    </textarea>
+                    <label for="p4" :class="darkTheme ? 'txtDark' : 'txtDay'">Paragraphe 4</label>
+                    <textarea rows="10" cols="50" name="p4" type="text" class="description_bio p" v-model="pageData[0].p_4">
+                                    </textarea>
+                    <div class="bloc_tilte_2">
+                        <h2 :class="darkTheme ? 'txtDark' : 'txtDay'">{{ pageData[0].title_2 }}</h2>
+                        <label for="img_text">titre rubrique
+                            <input type="text" name="img_text" v-model="pageData[0].title_2" />
+                        </label>
+                    </div>
+
+                    <div class="btn_action btn_info">
+                        <div class="btn_update">
+
+                            <label for="submit"></label>
+                            <input type="button" name="submit" class="btn btn_up btn_all" keyUp="enter" value="Update"
+                                @click="updateBio(pageData[0]._id)">
+                        </div>
+                        <div class="btn_update info_text">
+                            Modification nécessaire pour chaque langue
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,6 +94,7 @@
 
         <div class="row bloc_img_spectacles">
             <div class="otherShows">
+                <p class="info_text"> Modification valable pour les 3 langues</p>
                 <div class="bloc_loop_otherShows col-12">
                     <div class="bloc_img" v-for=" (i, index) in imgData" :key="i._id">
                         <div class="img_card">
@@ -150,7 +156,7 @@
                         <div class="bloc_new_card" v-if="newCard">
                             <div class="img_card">
                                 <div class="bloc_img">
-                                    <template v-if="preview && inputSelected == imgLength + 1">
+                                    <template v-if="preview && inputSelected == imgLengther(inputSelected)">
 
                                         <img :src="preview" class="img_display_create" />
 
@@ -247,26 +253,26 @@ export default defineComponent({
             darkTheme: "darkTheme"
         }),
 
-        PageSate() {
-            if (this.pageData) {
-                this.p1Q = this.pageData[0].p_1;
-                console.log("COMPUTED");
-            }
-        },
+        // PageSate() {
+        //     if (this.pageData) {
+        //         this.p1Q = this.pageData[0].p_1;
+        //         console.log("COMPUTED");
+        //     }
+        // },
         imgState() {
             if (this.imgData) {
                 console.log("COMPUTED IMGDATA", this.imgData);
                 this.imgLength = this.imgData.length;
             }
         },
-        changeData() {
-            if (this.p1Q == undefined) {
+        // changeData() {
+        //     if (this.p1Q == undefined) {
 
-                console.log("COMPUTED PQ1 undefined");
-            } else {
-                console.log("COMPUTED PQ1 ", p1Q);
-            }
-        }
+        //         console.log("COMPUTED PQ1 undefined");
+        //     } else {
+        //         console.log("COMPUTED PQ1 ", p1Q);
+        //     }
+        // }
 
 
     },
@@ -284,37 +290,26 @@ export default defineComponent({
                 this.calcLength()
             }
         },
+        imgData: {
+            handler(n, o) {
+                if (n) {
+                    console.log("WATCH IMGDATA", this.imgData);
+                    this.imgLength = this.imgData.length;
+                }
+            }
+        },
 
-        // pageData: {
-        //     deep: true,
-        //     handler(n, o) {
-        //         for (let i in this.pageData[0]) {
-        //             // console.log(i);
-        //         }
-        //         // flag that the user made changes
-        //         console.log("WATCH PAGEDATA NEW", n);
-        //         console.log("WATCH PAGEDATA OLD", o[0]);
-        //         this.calcLength()
-        //     }
-        // },
 
-        // p1Q() {
-
-        //     console.log("WATCH PQ1",n,o);
-        //     if (this.pQ1.length > 280) {
-        //         let text = this.p1.length;
-        //         let font = 255 - text;
-        //         console.log("PQ1 LENGTH");
-        //         // alert(` Il ne vous reste plus que  ${font}   caractères`);
-        //     }
-
-        // },
     },
 
 
     methods: {
         imgState(iData) {
             return iData.length;
+        },
+        imgLengther(iS) {
+            console.log("INPUT SELECTED", iS);
+            return iS
         },
 
         calcLength() {
@@ -376,7 +371,8 @@ export default defineComponent({
 
                     this.inputFile = files.name;
 
-                    // console.log("INPUT SELECTED", index, files);
+                    console.log("INPUT SELECTED", index, files);
+                    console.log("IMG length", this.imgLength);
 
                     this.inputSelected = index;
                 }
@@ -583,12 +579,35 @@ export default defineComponent({
 @import url("../styles/btn.css");
 @import url("../styles/theme.css");
 
+.btn_info {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info_text {
+    background: white;
+    color: red;
+    border: 1px solid red;
+    padding: 3px 10px
+}
+
 .border {
     outline: 2px solid red
 }
 
-.row {
+/* ***** BLOC UPDATE ***** */
+.bloc_update {
     border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.bloc_img_spectacles {
+    border: 2px solid black;
+}
+
+/* ***** END BLOC UPDATE ***** */
+.row {
     margin: 5px 0;
     padding: 10px 0;
 }
@@ -611,7 +630,7 @@ export default defineComponent({
 textarea {
     width: 400px;
     margin: 10px auto 2rem;
-    padding:5px;
+    padding: 5px;
 }
 
 .bloc_loop_otherShows {
@@ -719,7 +738,7 @@ textarea {
         margin: 10px 0;
     }
 
+
 }
 
-@media screen and (min-width: 1400px) {}
-</style>
+@media screen and (min-width: 1400px) {}</style>

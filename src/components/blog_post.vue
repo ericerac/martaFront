@@ -84,6 +84,7 @@
 import fileUpload from "../js/fileUpload.js";
 import { mapState } from "vuex";
 import Compressor from 'compressorjs';
+
 export default {
     data() {
         return {

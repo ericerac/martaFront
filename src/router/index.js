@@ -53,7 +53,7 @@ const routes = [
   },
   {
     name: "portada",
-    path: "/portada",
+    path: "/creation",
     meta:{
       title:"Marta Renyer Home",
 
@@ -79,6 +79,12 @@ const routes = [
       requireAuth:true,
     },
     component: () => import("@/views/AdminPage.vue"),
+  },
+  {
+    name: "especatcles",
+    path: "/especatcles",
+    
+    component: () => import("@/views/espectacles.vue"),
   },
   {
     name: "calendar",
