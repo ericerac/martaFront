@@ -208,8 +208,6 @@ export default {
   },
   created: function () {
     console.log(" MOUNTED CALUPDATE ");
-
-
     // this.getPageData();
   },
 

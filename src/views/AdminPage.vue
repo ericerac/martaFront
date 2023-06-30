@@ -162,17 +162,16 @@ export default {
 
     preview_close: function (x) {
       console.log("PREVIEW IMAGE DB COMPONENT", x);
-
       this.preview_component = false;
     },
     dateClick: function () {
       console.log("DATE CLICK");
       this.datePicker = true
     },
-    goTo:function (x) {
+    goTo: function (x) {
       console.log("GO TO");
       this.shutDownComponent();
-          this.getPageData(x)
+      this.getPageData(x)
     },
 
     goToBlog: function () {
@@ -184,16 +183,16 @@ export default {
       location.reload();
       console.log("LANGUE---->", l);
     },
-shutDownComponent(){
-            this.home = false;
-            this.calUpdate = false;
-            this.bioUpdate = false;
-            this.bernUpdate = false;
-            this.EmperUpdate = false
-            this.kakos = false;
-            this.Elvira = false;
-          
-},
+    shutDownComponent() {
+      this.home = false;
+      this.calUpdate = false;
+      this.bioUpdate = false;
+      this.bernUpdate = false;
+      this.EmperUpdate = false
+      this.kakos = false;
+      this.Elvira = false;
+
+    },
     async getPageData(x) {
 
       this.$store.dispatch("getPageData", x)
@@ -203,7 +202,7 @@ shutDownComponent(){
             this.$store.dispatch("getImgData", x)
             this.home = true;
             // console.log("RES BLOC IF ADMIN PAGE");
-          } else if (response && x == "cal") {
+          } else if (response && x == "calendar") {
             this.calUpdate = true;
           } else if (response && x == "bio") {
             this.$store.dispatch("getImgData", x).then((res) => {
