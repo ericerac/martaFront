@@ -196,6 +196,7 @@ export default {
     async getPageData(x) {
 
       this.$store.dispatch("getPageData", x)
+      console.log("ADMIN GET PAGE NAME PAGE", x);
         .then((response) => {
           // console.log("RESPONSE ADMIN PAGE", response);
           if (response && x == "portada") {
@@ -207,7 +208,7 @@ export default {
           } else if (response && x == "bio") {
             this.$store.dispatch("getImgData", x).then((res) => {
               if (res) {
-                console.log("RESPONSE IMG BIO");
+                // console.log("RESPONSE IMG BIO");
                 this.bioUpdate = true;
               }
             })
