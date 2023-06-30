@@ -195,8 +195,8 @@ export default {
     },
     async getPageData(x) {
 
-      this.$store.dispatch("getPageData", x)
       console.log("ADMIN GET PAGE NAME PAGE", x);
+      this.$store.dispatch("getPageData", x)
         .then((response) => {
           // console.log("RESPONSE ADMIN PAGE", response);
           if (response && x == "portada") {
