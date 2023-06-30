@@ -20,9 +20,6 @@
         <li @click="goTo('kakos')">Kako's</li>
         <li @click="goTo('emperdonadas')">Emperdonadas</li>
         <li @click="goTo('elvira')">Elvira</li>
-        <!-- <li @click="goToBlog()">Blog </li> -->
-
-
       </ul>
     </div>
 

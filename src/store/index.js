@@ -26,9 +26,9 @@ import axios from "axios";
 // // --------------------------------------------------------------//
 
 const instance = axios.create({
-     baseURL: "http://49.13.3.226/",
+        baseURL: "http://49.13.3.226/",
    
-  //  baseURL: "http://localhost:3000/",
+      // baseURL: "http://localhost:3000/",
 });
 
 // // --------------------------------------------------------//
@@ -271,6 +271,7 @@ const store = createStore({
     },
     NamePage: (state, val) => {
       state.namePage = val;
+      console.log("MUT NAME PAGE",val);
     },
     LangPage: (state, val) => {
       state.langPage = val;

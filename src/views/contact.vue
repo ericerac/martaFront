@@ -29,17 +29,31 @@
 </template>
 
 <script>
+import { mapGetters, mapState, mapMutations } from "vuex";
 
 export default {
   name: "contact",
   data: () => {
     return {
       navbarOk: true,
+      namePage:""
     }
   },
-  
-  methods: {
+  computed: {
+    
+    ...mapMutations(["NamePage"]),
+  },
 
+  created:function(){
+this.name();
+
+  },
+  methods: {
+name(){
+  this.namePage = "contact";
+  console.log("NAME PAGE CONTACT", this.namePage)
+  this.$store.commit("NamePage","contact")
+}
 
   },
 }

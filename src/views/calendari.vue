@@ -219,7 +219,7 @@ export default {
         },
         // ****************************************
         getPageData() {
-            const n = "calendar";
+            const n = "cal";
             this.$store.dispatch("getPageData", n)
                 .then((res) => {
                     if (res) {

@@ -81,8 +81,8 @@ const routes = [
     component: () => import("@/views/AdminPage.vue"),
   },
   {
-    name: "especatcles",
-    path: "/especatcles",
+    name: "espectacles",
+    path: "/espectacles",
     
     component: () => import("@/views/espectacles.vue"),
   },
