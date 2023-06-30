@@ -26,9 +26,9 @@ import axios from "axios";
 // // --------------------------------------------------------------//
 
 const instance = axios.create({
-        baseURL: "http://49.13.3.226/",
+         baseURL: "http://49.13.3.226/",
    
-      // baseURL: "http://localhost:3000/",
+       // baseURL: "http://localhost:3000/",
 });
 
 // // --------------------------------------------------------//
@@ -409,7 +409,7 @@ const store = createStore({
        commit("loading", true);
       if (n == "post") {
         lang = "cat";
-      } else if (n == "cal") {
+      } else if (n == "calendar") {
         lang = "free";
       }else if ($cookies.get("lang")) {
         let l = $cookies.get("lang");
@@ -606,7 +606,7 @@ const store = createStore({
       commit("loading", true);
       return new Promise((resolve, reject) => {
         instance
-          .post("/inici/cal/create?page=cal", data, {})
+          .post("/inici/cal/create?page=calendar", data, {})
           .then((response) => {
             commit("ArtData", response.data);
             commit("loading", false);

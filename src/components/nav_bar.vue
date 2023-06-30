@@ -7,7 +7,7 @@
                  -->
                 <ul class="navbare  col-12"  >
                     
-                    <li class="show-nav" v-if="logoOn" > <img class="logo rounded-circle" src="../assets/logo/logo.png" alt="logo"></li>
+                    <li class="show-nav" v-if="logoOn" > <img class="logo rounded-circle" src="../assets/logo/logo.png" alt="logo companya marta renyer"></li>
                     <li class="show-nav " :class="{ nameDisplay: namePage == 'portada'}"    > <router-link to="/">{{ navData[0].l_1 }}</router-link></li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'bio'}"    ><router-link to="/bio"> {{ navData[0].l_2 }}</router-link></li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'espectacles' }"> <router-link to="/espectacles">{{ navData[0].l_3 }}</router-link>
@@ -21,7 +21,7 @@
                     </li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'creation'}"   ><router-link to="/creation"> {{ navData[0].l_7 }}</router-link></li>
                     <!-- <li class="show-nav" :class="{ nameDisplay: namePage == 'post'}"><router-link to="/blog"> {{ navData[0].l_4 }}</router-link></li> -->
-                    <li class="show-nav" :class="{ nameDisplay: namePage == 'calendar' }"  ><router-link to="/cal"> {{ navData[0].l_5 }}</router-link></li>
+                    <li class="show-nav" :class="{ nameDisplay: namePage == 'cal' }"  ><router-link to="/cal"> {{ navData[0].l_5 }}</router-link></li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'contact' }"  ><router-link to="/contact"> {{ navData[0].l_6 }}</router-link></li>
                     <li class="idiomes">
                         <span class="idioma"  @click="lang('cat')">Cat</span>

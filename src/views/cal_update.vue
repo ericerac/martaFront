@@ -307,7 +307,7 @@ export default {
         bodyFormData.append("hour", cardUp[0].hour);
         bodyFormData.append("link_event", cardUp[0].link_event);
         bodyFormData.append("link_show", cardUp[0].link_show);
-        bodyFormData.append("name", "cal");
+        bodyFormData.append("name", "calendar");
         bodyFormData.append("show_name", cardUp[0].show_name);
       } else {
         bodyFormData.append("id", cardUp[0]._id);
@@ -319,7 +319,7 @@ export default {
         bodyFormData.append("hour", cardUp[0].hour);
         bodyFormData.append("link_event", cardUp[0].link_event);
         bodyFormData.append("link_show", cardUp[0].link_show);
-        bodyFormData.append("name", "cal");
+        bodyFormData.append("name", "calendar");
         bodyFormData.append("show_name", cardUp[0].show_name);
       }
 
@@ -331,7 +331,7 @@ export default {
       this.$store
         .dispatch("updatePage", {
           data: bodyFormData,
-          page: "cal",
+          page: "calendar",
         })
 
         .then((response) => {
@@ -370,7 +370,7 @@ export default {
         bodyFormData.append("hour", this.pageData.hour);
         bodyFormData.append("link_event", this.pageData.link_event);
         bodyFormData.append("link_show", this.pageData.link_show);
-        bodyFormData.append("name", "cal");
+        bodyFormData.append("name", "calendar");
         bodyFormData.append("show_name", this.pageData.show_name);
       } else {
         // bodyFormData.append("id", this.pageData._id);
@@ -383,14 +383,18 @@ export default {
         bodyFormData.append("hour", this.pageData.hour);
         bodyFormData.append("link_event", this.pageData.link_event);
         bodyFormData.append("link_show", this.pageData.link_show);
-        bodyFormData.append("name", "cal");
+        bodyFormData.append("name", "calendar");
         bodyFormData.append("show_name", this.pageData.show_name);
       }
       this.$store
         .dispatch("createDate", bodyFormData)
 
         .then(function (response) {
-          console.log("REPONSE CREA CAL UPDATE--->", response);
+          console.log("REPONSE CREATE CALENDAR--->", response);
+          // let newCal = this.pageData.filter(item => item._id != x);
+
+          //   console.log("FILTER", newCal);
+          //   this.pageData = newCal
           //     location.reload();
         })
         .catch(function (response) {
@@ -404,7 +408,7 @@ export default {
       this.$store
         .dispatch("delCard", {
           idCard: x,
-          page: "cal",
+          page: "calendar",
         })
 
         .then((response) => {
