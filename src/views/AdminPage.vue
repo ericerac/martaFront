@@ -169,7 +169,7 @@ export default {
       this.datePicker = true
     },
     goTo: function (x) {
-      console.log("GO TO");
+      console.log("GO TO",x);
       this.shutDownComponent();
       this.getPageData(x)
     },

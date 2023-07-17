@@ -222,8 +222,8 @@ svg {
   /* top: 50%;
   left: 50%;
   transform: translate(-50%, -0%); */
-  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
-  background: var(--bgTitle);
+  /* clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
+  background: var(--bgTitle); */
   /* background: rgba(165, 42, 42, 1); */
   z-index: 2;
 

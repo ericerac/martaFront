@@ -1,7 +1,7 @@
 <template>
   <div class="container  text-center">
 
-      <div class="row txt-espectacle text bgTitleClT">
+      <div class="row txt-espectacle text ">
         <h2 class="titles">ESPECTACLES</h2>
       </div>
       <div class="row  col-12 bloc_img_especatcle" id="spectacle" >
@@ -111,7 +111,7 @@ getPageData() {
 @import url("../styles/font.css");
 .container {
     max-width: 1000px;
-    margin-top: 100px;
+    margin-top: 0px;
   }
   .nameTitleC {
   width: 300px;
@@ -194,10 +194,10 @@ svg {
 }
 
 .titles {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   font-size: var(--fontSizeTitleH2);
   color: white;
   text-shadow: 0 0 30px #f92424, 0px 0px 50px rgba(251, 41, 41, 0.5), 0 0 150px #EC637B, 0 0 30px #f92424;
@@ -390,7 +390,7 @@ li {
 
 .txt-espectacle {
   color: rgb(13, 15, 15);
-  margin: 30px auto;
+  margin: 130px auto;
 }
 
 .showName {
@@ -400,8 +400,8 @@ li {
 }
 
 .txt-espectacle {
-
-  margin: 10px auto;
+  margin: 0px auto;
+  padding-top:120px
 }
 
 
@@ -523,30 +523,20 @@ li {
   .right_bloc {
     margin-top: 100px
   }
-
+  .txt-espectacle {
+  
+  padding-top:150px;
+  
+}
   #spectacle {
-    padding: 50px 30px 30px 30px;
+    padding: 20px 30px 30px 30px;
     justify-content: center;
     border-radius: 20px 0;
-    /* box-shadow:
-      white 0.006em 0.006em 0.007em,
-      rgba(251, 36, 36, .3) 1px 1px 1px,
-      rgba(251, 36, 36, .3) 2px 2px 1px,
-      rgba(251, 36, 36, .3) 3px 3px 1px,
-      rgba(251, 36, 36, .3) 4px 4px 1px,
-      rgba(251, 36, 36, .3) 5px 5px 1px,
-      rgba(251, 36, 36, .3) 6px 6px 1px,
-      rgba(251, 36, 36, .3) 7px 7px 1px,
-      rgba(251, 36, 36, .3) 8px 8px 1px,
-      rgba(251, 36, 36, .3) 9px 9px 1px,
-      rgba(251, 36, 36, .3) 10px 10px 1px,
-      rgba(251, 36, 36, .3)11px 11px 1px,
-      rgba(251, 36, 36, .3) 12px 12px 1px;
-    color: #fff;
-    background-color: rgba(113, 130, 141, .3); */
-    ;
+    
   }
-
+.titles{
+  font-size: 70px;
+}
   .espectacle-bloc {
     margin: 30px;
   }

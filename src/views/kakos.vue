@@ -186,13 +186,14 @@ export default {
   display: flex;
   justify-content: center;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   height: auto;
   align-items: center;
 }
 
 .bloc_loop {
   background: transparent;
+  padding-top:50px;
 }
 
 /* .header_title h1 {
@@ -203,24 +204,24 @@ export default {
   height: auto;
 } */
 .bgTitleClT{
-  width:350px;
- height:170px;
+  /* width:350px;
+ height:100px; */
 
 }
 .bgTitleClT{
-  position:relative;
-  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
-  background: var(--bgTitle);
-  z-index:2;
+  /* position:relative;
+  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%); 
+   background: var(--bgTitle);
+  z-index:2; */
   
 }
 .title_1_1{
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%); */
   font-size:50px;
-  color:white
+  /* color:white */
  
 }
 h6>strong {
@@ -232,6 +233,7 @@ h6>strong {
 iframe {
   width: 350px;
   height: 300px;
+  margin-bottom: 30px;
 }
 
 .img_grid {
@@ -339,6 +341,10 @@ iframe {
 margin-top:50px;
     margin-bottom: 50px
   }
+  .title_info_sinopsis {
+    width: 100%;
+    text-align: center;
+  }
 
 
 }
@@ -346,7 +352,7 @@ margin-top:50px;
 @media screen and (min-width:768px) {
 
   .bloc_loop {
-    margin-top: 100px
+    
   }
 
   .header {
@@ -361,18 +367,16 @@ margin-top:50px;
     margin: 0 auto;
     width: 100%;
     height: auto;
-
     align-items: center;
-
   }
 
   .img_grid {
     display: flex;
     width: 100%;
     margin-top: 40px;
-    padding: 100px 10px;
-    background-color: chocolate;
-    clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%)
+    padding: 10px 10px;
+    /* background-color: chocolate;
+    clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%) */
   }
 
   .img_loop {
@@ -411,17 +415,17 @@ margin-top:50px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    clip-path: polygon(0 0, 50% 12%, 100% 0, 100% 88%, 50% 100%, 0 88%);
-    background-color: chocolate;
+    /* clip-path: polygon(0 0, 50% 12%, 100% 0, 100% 88%, 50% 100%, 0 88%);
+    background-color: chocolate; */
   }
   
   .vid {
-    height: 510px;
-    padding: 100px 0px;
+    height: auto;
+    padding: 20px 0px;
   }
 
   .img_grid {
-    height: 510px;
+    height: auto;
     margin-top: 0;
     background: none;
   }
@@ -511,7 +515,7 @@ margin-top:50px;
 
 @media screen and (min-width:1660px) {
   .header{
-    margin-top:50px;
+    margin-top:90px;
   }
 
   .bloc_sinopsis {

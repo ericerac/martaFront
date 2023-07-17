@@ -21,7 +21,7 @@
                     </li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'creation'}"   ><router-link to="/creation"> {{ navData[0].l_7 }}</router-link></li>
                     <!-- <li class="show-nav" :class="{ nameDisplay: namePage == 'post'}"><router-link to="/blog"> {{ navData[0].l_4 }}</router-link></li> -->
-                    <li class="show-nav" :class="{ nameDisplay: namePage == 'cal' }"  ><router-link to="/cal"> {{ navData[0].l_5 }}</router-link></li>
+                    <li class="show-nav" :class="{ nameDisplay: namePage == 'calendar' }"  ><router-link to="/cal"> {{ navData[0].l_5 }}</router-link></li>
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'contact' }"  ><router-link to="/contact"> {{ navData[0].l_6 }}</router-link></li>
                     <li class="idiomes">
                         <span class="idioma"  @click="lang('cat')">Cat</span>
