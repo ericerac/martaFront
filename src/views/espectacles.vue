@@ -19,10 +19,10 @@
               <h3 class="showName text " :class="darkTheme ? 'txtDark' : 'txtDay'">{{ i.showName }} </h3>
             </router-link>
 
-            <router-link v-if="index == 1" to="/emperdonadas">
+            <!-- <router-link v-if="index == 1" to="/emperdonadas">
               <img class=" img-spectacle  rounded-circle col-12 " :src="i.imageUrl" alt="" />
               <h3 class="showName text " :class="darkTheme ? 'txtDark' : 'txtDay'">{{ i.showName }} </h3>
-            </router-link>
+            </router-link> -->
 
             <router-link v-if="index == 2" to="/bernadette">
               <img class=" img-spectacle  rounded-circle col-12 " :src="i.imageUrl" alt="" />

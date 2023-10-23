@@ -13,7 +13,7 @@
                     <li class="show-nav" :class="{ nameDisplay: namePage == 'espectacles' }"> <router-link to="/espectacles">{{ navData[0].l_3 }}</router-link>
                     <ul class="show-list" >
                       <li class="item-show-list" :class="{ nameDisplay: namePage == 'kakos'}"><router-link to="/kakos"> Kakofonikas</router-link></li>
-                      <li class="item-show-list" :class="{ nameDisplay: namePage == 'emperdonadas'}"><router-link to="/emperdonadas">Emperdonadas</router-link></li>
+                      <!-- <li class="item-show-list" :class="{ nameDisplay: namePage == 'emperdonadas'}"><router-link to="/emperdonadas">Emperdonadas</router-link></li> -->
                       <li class="item-show-list" :class="{ nameDisplay: namePage == 'bernadette'}"><router-link to="/bernadette">Bernadette</router-link></li>
                       <li class="item-show-list" :class="{ nameDisplay: namePage == 'elvira'}"><router-link to="/elvira">Elvira</router-link></li>
                       <!-- <li class="item-show-list"><router-link to="/creation">Creation</router-link></li> -->
